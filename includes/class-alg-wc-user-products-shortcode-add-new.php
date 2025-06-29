@@ -124,64 +124,85 @@ class Alg_WC_User_Products_Shortcode {
 	}
 
 	/**
-	 * wc_add_new_product.
+	 * add_new_product.
 	 *
 	 * @version 2.0.0
 	 * @since   1.0.0
 	 *
-	 * @todo    (v2.0.0) use `new WC_Product()`
-	 * @todo    (v2.0.0) replace `move_uploaded_file()`
+	 * @todo    (v2.0.0) Product categories: use `$product->set_category_ids()`?
+	 * @todo    (v2.0.0) Product tags: use `$product->set_tag_ids()`?
+	 * @todo    (v2.0.0) Custom fields: use `$product->update_meta_data()`?
+	 * @todo    (v2.0.0) Image: `$product_id` is not required?
 	 * @todo    (feature) Image gallery // `<input type="file" multiple>` or separate `<input type="file">` for each file // `update_post_meta( $product_id, '_product_image_gallery', implode( ',', $attach_ids ) );`
 	 */
-	function wc_add_new_product( $args, $shortcode_atts ) {
+	function add_new_product( $args, $shortcode_atts ) {
 
-		$product_post = array(
-			'post_title'    => $args['title'],
-			'post_content'  => $args['desc'],
-			'post_excerpt'  => $args['short_desc'],
-			'post_type'     => 'product',
-			'post_status'   => 'draft',
-		);
-
+		// Get product
 		if ( 0 == $shortcode_atts['product_id'] ) {
-			$product_id = wp_insert_post( $product_post );
+
+			// Add new product
+			$product_type = get_option( 'alg_wc_user_products_product_type', 'simple' );
+			switch ( $product_type ) {
+				case 'external':
+					$product = new WC_Product_External();
+					break;
+				default: // 'simple'
+					$product = new WC_Product();
+			}
+
 		} else {
-			$product_id = $shortcode_atts['product_id'];
-			wp_update_post( array_merge( array( 'ID' => $product_id ), $product_post ) );
+
+			// Edit product
+			$product = wc_get_product( $shortcode_atts['product_id'] );
+
 		}
 
-		// Insert the post into the database
+		// Check product
+		if ( ! $product ) {
+			return 0;
+		}
+
+		// Title & descriptions
+		$product->set_name( $args['title'] );
+		$product->set_description( $args['desc'] );
+		$product->set_short_description( $args['short_desc'] );
+
+		// Status
+		$product->set_status( $shortcode_atts['post_status'] );
+
+		// Prices
+		$product->set_regular_price( $args['regular_price'] );
+		$product->set_sale_price( $args['sale_price'] );
+
+		// Catalog visibility
+		$product->set_catalog_visibility( 'visible' );
+
+		// Stock status
+		$product->set_stock_status( 'instock' );
+
+		// External product URL
+		'WC_Product_External' !== get_class( $product ) || $product->set_product_url( $args['external_url'] );
+
+		// Save product
+		$product_id = $product->save();
+
 		if ( 0 != $product_id ) {
 
-			wp_set_object_terms(
-				$product_id,
-				get_option( 'alg_wc_user_products_product_type', 'simple' ),
-				'product_type'
-			);
+			// Product categories
 			wp_set_object_terms(
 				$product_id,
 				$args['cats'],
 				'product_cat'
 			);
+
+			// Product tags
 			wp_set_object_terms(
 				$product_id,
 				$args['tags'],
 				'product_tag'
 			);
 
-			for ( $i = 1; $i <= $this->the_atts['custom_taxonomies_total']; $i++ ) {
-				if (
-					'yes' === $this->the_atts[ 'custom_taxonomy_' . $i . '_enabled' ] &&
-					'' != $this->the_atts[ 'custom_taxonomy_' . $i . '_id' ]
-				) {
-					wp_set_object_terms(
-						$product_id,
-						$args[ 'custom_taxonomy_' . $i ],
-						$this->the_atts[ 'custom_taxonomy_' . $i . '_id' ]
-					);
-				}
-			}
-
+			// Custom fields
 			for ( $i = 1; $i <= $this->the_atts['custom_fields_total']; $i++ ) {
 				if (
 					'yes' === $this->the_atts[ 'custom_field_' . $i . '_enabled' ] &&
@@ -195,50 +216,49 @@ class Alg_WC_User_Products_Shortcode {
 				}
 			}
 
-			update_post_meta( $product_id, '_regular_price', $args['regular_price'] );
-			update_post_meta( $product_id, '_sale_price',    $args['sale_price'] );
-			update_post_meta( $product_id, '_price',         ( '' == $args['sale_price'] ? $args['regular_price'] : $args['sale_price'] ) );
-			update_post_meta( $product_id, '_visibility',    'visible' );
-			update_post_meta( $product_id, '_stock_status',  'instock' );
-
-			if ( 'external' === get_option( 'alg_wc_user_products_product_type', 'simple' ) ) {
-				update_post_meta( $product_id, '_product_url', $args['external_url'] );
+			// Custom taxonomies
+			for ( $i = 1; $i <= $this->the_atts['custom_taxonomies_total']; $i++ ) {
+				if (
+					'yes' === $this->the_atts[ 'custom_taxonomy_' . $i . '_enabled' ] &&
+					'' != $this->the_atts[ 'custom_taxonomy_' . $i . '_id' ]
+				) {
+					wp_set_object_terms(
+						$product_id,
+						$args[ 'custom_taxonomy_' . $i ],
+						$this->the_atts[ 'custom_taxonomy_' . $i . '_id' ]
+					);
+				}
 			}
 
 			// Image
 			if ( '' != $args['image'] && '' != $args['image']['tmp_name'] ) {
-				$upload_dir  = wp_upload_dir();
-				$filename    = $args['image']['name'];
-				$file        = (
-					wp_mkdir_p( $upload_dir['path'] ) ?
-					$upload_dir['path'] :
-					$upload_dir['basedir']
-				);
-				$file       .= '/' . $filename;
 
-				move_uploaded_file( $args['image']['tmp_name'], $file );
+				// Handle upload
+				function_exists( 'wp_handle_upload' ) || require_once ABSPATH . 'wp-admin/includes/file.php';
+				$upload_res = wp_handle_upload( $args['image'], array( 'test_form' => false ) );
 
-				$wp_filetype = wp_check_filetype( $filename, null );
-				$attachment  = array(
-					'post_mime_type' => $wp_filetype['type'],
-					'post_title'     => sanitize_file_name( $filename ),
-					'post_content'   => '',
-					'post_status'    => 'inherit'
-				);
-				$attach_id   = wp_insert_attachment( $attachment, $file, $product_id );
-				require_once ABSPATH . 'wp-admin/includes/image.php';
-				$attach_data = wp_generate_attachment_metadata( $attach_id, $file );
-				wp_update_attachment_metadata( $attach_id, $attach_data );
+				if ( isset( $upload_res['file'], $upload_res['type'] ) ) {
+					require_once ABSPATH . 'wp-admin/includes/image.php';
 
-				set_post_thumbnail( $product_id, $attach_id );
+					// Get thumbnail (attachment) ID
+					$attachment  = array(
+						'post_mime_type' => $upload_res['type'],
+						'post_title'     => sanitize_file_name( $args['image']['name'] ),
+						'post_content'   => '',
+						'post_status'    => 'inherit',
+					);
+					$attach_id   = wp_insert_attachment( $attachment, $upload_res['file'], $product_id );
+					$attach_data = wp_generate_attachment_metadata( $attach_id, $upload_res['file'] );
+					wp_update_attachment_metadata( $attach_id, $attach_data );
+
+					// Set thumbnail
+					$product->set_image_id( $attach_id );
+					$product->save();
+
+				}
+
 			}
 
-			wp_update_post(
-				array(
-					'ID'          => $product_id,
-					'post_status' => $shortcode_atts['post_status'],
-				)
-			);
 		}
 
 		return $product_id;
@@ -624,7 +644,7 @@ class Alg_WC_User_Products_Shortcode {
 
 		if ( isset( $_REQUEST['alg_wc_add_new_product'] ) ) { // phpcs:ignore WordPress.Security.NonceVerification.Recommended
 			if ( true === ( $validate_args = $this->validate_args( $args, $atts ) ) ) {
-				$result = $this->wc_add_new_product( $args, $atts );
+				$result = $this->add_new_product( $args, $atts );
 				if ( 0 == $result ) {
 					// Error
 					$notice_html .= '<div class="woocommerce">' .

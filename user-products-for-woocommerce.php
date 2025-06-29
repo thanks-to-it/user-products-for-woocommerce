@@ -3,7 +3,7 @@
 Plugin Name: User Products for WooCommerce
 Plugin URI: https://wordpress.org/plugins/user-products-for-woocommerce/
 Description: Let users add new WooCommerce products from frontend.
-Version: 2.0.0-dev
+Version: 2.0.0
 Author: Algoritmika Ltd
 Author URI: https://profiles.wordpress.org/algoritmika/
 Requires at least: 5.0
@@ -37,7 +37,7 @@ if ( 'user-products-for-woocommerce.php' === basename( __FILE__ ) ) {
 	}
 }
 
-defined( 'ALG_WC_USER_PRODUCTS_VERSION' ) || define( 'ALG_WC_USER_PRODUCTS_VERSION', '2.0.0-dev-20250629-0910' );
+defined( 'ALG_WC_USER_PRODUCTS_VERSION' ) || define( 'ALG_WC_USER_PRODUCTS_VERSION', '2.0.0' );
 
 defined( 'ALG_WC_USER_PRODUCTS_FILE' ) || define( 'ALG_WC_USER_PRODUCTS_FILE', __FILE__ );
 

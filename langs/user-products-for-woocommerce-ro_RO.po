@@ -1,0 +1,379 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: \n"
+"POT-Creation-Date: \n"
+"PO-Revision-Date: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 2.4.2\n"
+"Last-Translator: \n"
+"Plural-Forms: nplurals=3; plural=(n==1 ? 0 : n==0 || (n!=1 && n%100>=1 && n"
+"%100<=19) ? 1 : 2);\n"
+"Language: ro_RO\n"
+
+#: includes/class-alg-wc-user-products-my-account.php:91
+#: includes/class-alg-wc-user-products-my-account.php:130
+msgid "Products"
+msgstr "Produse"
+
+#: includes/class-alg-wc-user-products-shortcode-add-new.php:195
+msgid "Title is required!"
+msgstr "Numele de produs este obligatoriu!"
+
+#: includes/class-alg-wc-user-products-shortcode-add-new.php:203
+msgid "Product exists!"
+msgstr "Produsul există deja!"
+
+#: includes/class-alg-wc-user-products-shortcode-add-new.php:208
+#: includes/class-alg-wc-user-products-shortcode-add-new.php:399
+#: includes/settings/class-alg-wc-user-products-settings-general.php:65
+msgid "Description"
+msgstr "Descriere"
+
+#: includes/class-alg-wc-user-products-shortcode-add-new.php:209
+#: includes/class-alg-wc-user-products-shortcode-add-new.php:408
+#: includes/settings/class-alg-wc-user-products-settings-general.php:66
+msgid "Short Description"
+msgstr "Descriere scurtă"
+
+#: includes/class-alg-wc-user-products-shortcode-add-new.php:210
+#: includes/class-alg-wc-user-products-shortcode-add-new.php:428
+#: includes/settings/class-alg-wc-user-products-settings-general.php:67
+msgid "Image"
+msgstr "imagine"
+
+#: includes/class-alg-wc-user-products-shortcode-add-new.php:211
+#: includes/class-alg-wc-user-products-shortcode-add-new.php:436
+#: includes/settings/class-alg-wc-user-products-settings-general.php:68
+msgid "Regular Price"
+msgstr "Preț Obișnuit"
+
+#: includes/class-alg-wc-user-products-shortcode-add-new.php:212
+#: includes/class-alg-wc-user-products-shortcode-add-new.php:445
+#: includes/settings/class-alg-wc-user-products-settings-general.php:69
+msgid "Sale Price"
+msgstr "Preț Redus"
+
+#: includes/class-alg-wc-user-products-shortcode-add-new.php:213
+#: includes/class-alg-wc-user-products-shortcode-add-new.php:454
+msgid "Product URL"
+msgstr "URL produs"
+
+#: includes/class-alg-wc-user-products-shortcode-add-new.php:214
+#: includes/class-alg-wc-user-products-shortcode-add-new.php:461
+#: includes/class-alg-wc-user-products-shortcodes.php:125
+#: includes/settings/class-alg-wc-user-products-settings-general.php:71
+msgid "Categories"
+msgstr "Categorii"
+
+#: includes/class-alg-wc-user-products-shortcode-add-new.php:215
+#: includes/class-alg-wc-user-products-shortcode-add-new.php:466
+#: includes/class-alg-wc-user-products-shortcodes.php:126
+#: includes/settings/class-alg-wc-user-products-settings-general.php:72
+msgid "Tags"
+msgstr "Etichete"
+
+#: includes/class-alg-wc-user-products-shortcode-add-new.php:234
+#, php-format
+msgid "%s is required!"
+msgstr "%s este obligatoriu!"
+
+#: includes/class-alg-wc-user-products-shortcode-add-new.php:240
+msgid "Sale price must be less than the regular price!"
+msgstr "Prețul redus trebuie să fie mai mic decât cel obișnuit."
+
+#: includes/class-alg-wc-user-products-shortcode-add-new.php:338
+msgid "Error!"
+msgstr "Eroare!"
+
+#: includes/class-alg-wc-user-products-shortcode-add-new.php:346
+#: includes/settings/class-alg-wc-user-products-settings-general.php:206
+msgid "\"%product_title%\" successfully added!"
+msgstr "Produsul “%product_title%” a fost adăugat cu succes!"
+
+#: includes/class-alg-wc-user-products-shortcode-add-new.php:353
+#: includes/settings/class-alg-wc-user-products-settings-general.php:213
+msgid "\"%product_title%\" successfully edited!"
+msgstr "Produsul “%product_title%” a fost modificat cu succes!"
+
+#: includes/class-alg-wc-user-products-shortcode-add-new.php:367
+#: includes/class-alg-wc-user-products-shortcodes.php:70
+#: includes/class-alg-wc-user-products-shortcodes.php:79
+msgid "Wrong user ID!"
+msgstr "ID utilizator greșit!"
+
+#: includes/class-alg-wc-user-products-shortcode-add-new.php:379
+msgid "Add New Product"
+msgstr "Adăugare Produs Nou"
+
+#: includes/class-alg-wc-user-products-shortcode-add-new.php:379
+msgid "Edit Product"
+msgstr "Editare Produs"
+
+#: includes/class-alg-wc-user-products-shortcode-add-new.php:384
+msgid "required"
+msgstr "obligatoriu"
+
+#: includes/class-alg-wc-user-products-shortcode-add-new.php:391
+#: includes/class-alg-wc-user-products-shortcodes.php:122
+#: includes/class-alg-wc-user-products-shortcodes.php:123
+#: includes/settings/class-alg-wc-user-products-settings-general.php:262
+#: includes/settings/class-alg-wc-user-products-settings-general.php:316
+msgid "Title"
+msgstr "Nume produs"
+
+#: includes/class-alg-wc-user-products-shortcode-add-new.php:421
+#: includes/class-alg-wc-user-products-shortcodes.php:181
+msgid "Are you sure?"
+msgstr "Ești sigur?"
+
+#: includes/class-alg-wc-user-products-shortcode-add-new.php:421
+#: includes/class-alg-wc-user-products-shortcodes.php:182
+msgid "Delete"
+msgstr "Ștergere"
+
+#: includes/class-alg-wc-user-products-shortcode-add-new.php:494
+#: includes/settings/class-alg-wc-user-products-settings-general.php:177
+msgid "Add"
+msgstr "Adăugare"
+
+#: includes/class-alg-wc-user-products-shortcode-add-new.php:494
+#: includes/class-alg-wc-user-products-shortcodes.php:178
+msgid "Edit"
+msgstr "Editare"
+
+#: includes/class-alg-wc-user-products-shortcodes.php:120
+#: includes/class-alg-wc-user-products-shortcodes.php:121
+msgid "Status"
+msgstr "Status"
+
+#: includes/class-alg-wc-user-products-shortcodes.php:124
+msgid "Actions"
+msgstr "Acțiuni"
+
+#: includes/class-alg-wc-user-products-shortcodes.php:184
+msgid "View"
+msgstr "Vizualizare"
+
+#: includes/class-alg-wc-user-products-shortcodes.php:215
+msgid "You have no products yet."
+msgstr "Momentan nu ai produse adăugate."
+
+#: includes/settings/class-alg-wc-user-products-settings-general.php:25
+msgid "General"
+msgstr "General"
+
+#: includes/settings/class-alg-wc-user-products-settings-general.php:44
+msgid "User Products Options"
+msgstr "Opțiuni Produse Utilizator"
+
+#: includes/settings/class-alg-wc-user-products-settings-general.php:47
+#, php-format
+msgid "Use %s shortcode to add product upload form to frontend."
+msgstr ""
+"Folosește shortcode-ul %s pentru a adăuga formularul de încărcare produs "
+"din frontend."
+
+#: includes/settings/class-alg-wc-user-products-settings-general.php:51
+msgid "User Products for WooCommerce"
+msgstr "Produse Utilizator pentru WooCommerce"
+
+#: includes/settings/class-alg-wc-user-products-settings-general.php:52
+msgid "Enable plugin"
+msgstr "Activare modul"
+
+#: includes/settings/class-alg-wc-user-products-settings-general.php:53
+msgid "Let users add new WooCommerce products from frontend."
+msgstr ""
+"Permite utilizatorilor să adauge produse noi în WooCommerce din frontend."
+
+#: includes/settings/class-alg-wc-user-products-settings-general.php:70
+msgid "Product URL (for \"External/Affiliate\" product type only)"
+msgstr "URL produs (doar pentru pentru produs extern/afiliat)"
+
+#: includes/settings/class-alg-wc-user-products-settings-general.php:87
+msgid "Additional fields"
+msgstr "Câmpuri suplimentare"
+
+#: includes/settings/class-alg-wc-user-products-settings-general.php:98
+msgid "Is required"
+msgstr "este obligatoriu"
+
+#: includes/settings/class-alg-wc-user-products-settings-general.php:111
+msgid "Fields Options"
+msgstr "Opțiuni Câmpuri"
+
+#: includes/settings/class-alg-wc-user-products-settings-general.php:113
+msgid "<em>Title</em> field is always enabled and required."
+msgstr "Câmpul <em>Nume produs</em> este întotdeauna activat și obligatoriu."
+
+#: includes/settings/class-alg-wc-user-products-settings-general.php:126
+msgid "General Options"
+msgstr "Opțiuni Generale"
+
+#: includes/settings/class-alg-wc-user-products-settings-general.php:131
+msgid "Price step (number of decimals)"
+msgstr "Format preț (număr decimale)"
+
+#: includes/settings/class-alg-wc-user-products-settings-general.php:132
+msgid "Used for price fields only."
+msgstr "Folosit doar pentru câmpurile de preț."
+
+#: includes/settings/class-alg-wc-user-products-settings-general.php:139
+msgid "User visibility"
+msgstr "Vizibilitate utilizator"
+
+#: includes/settings/class-alg-wc-user-products-settings-general.php:140
+msgid ""
+"If you want for product add form to be visible to selected user roles only, "
+"set roles here."
+msgstr ""
+"Dacă vrei ca formularul de adăugare produse să fie vizibil anumitor roluri, "
+"setează-le aici."
+
+#: includes/settings/class-alg-wc-user-products-settings-general.php:141
+msgid "Ignored if empty."
+msgstr "Ignorat dacă este gol."
+
+#: includes/settings/class-alg-wc-user-products-settings-general.php:149
+msgid "Product type"
+msgstr "Tip produs"
+
+#: includes/settings/class-alg-wc-user-products-settings-general.php:155
+msgid "Simple product"
+msgstr "Produs simplu"
+
+#: includes/settings/class-alg-wc-user-products-settings-general.php:156
+msgid "External/Affiliate product"
+msgstr "Produs extern/afiliat"
+
+#: includes/settings/class-alg-wc-user-products-settings-general.php:160
+msgid "Product status"
+msgstr "Status produs"
+
+#: includes/settings/class-alg-wc-user-products-settings-general.php:168
+msgid "Require unique title"
+msgstr "Necesită titlu unic"
+
+#: includes/settings/class-alg-wc-user-products-settings-general.php:169
+msgid "Enable"
+msgstr "Activare"
+
+#: includes/settings/class-alg-wc-user-products-settings-general.php:175
+msgid "Products tab"
+msgstr "Tab produse"
+
+#: includes/settings/class-alg-wc-user-products-settings-general.php:176
+msgid "Adds \"Products\" tab to user's \"My account\" page."
+msgstr "Adaugă tab “Produse” în pagina “Contul Meu” asociată utilizatorului"
+
+#: includes/settings/class-alg-wc-user-products-settings-general.php:183
+msgid "Tab content"
+msgstr "Conținut tab"
+
+#: includes/settings/class-alg-wc-user-products-settings-general.php:184
+#, php-format
+msgid "You should use %s shortcode here."
+msgstr "Ar trebui să folosești următorul shortcode %s aici."
+
+#: includes/settings/class-alg-wc-user-products-settings-general.php:198
+msgid "Messages"
+msgstr "Mesaje"
+
+#: includes/settings/class-alg-wc-user-products-settings-general.php:200
+#, php-format
+msgid "Replaced value: %s."
+msgstr "Valoare înlocuită: %s."
+
+#: includes/settings/class-alg-wc-user-products-settings-general.php:204
+msgid "Product successfully added"
+msgstr "Produsul a fost adăugat cu succes"
+
+#: includes/settings/class-alg-wc-user-products-settings-general.php:211
+msgid "Product successfully edited"
+msgstr "Produsul a fost modificat cu succes"
+
+#: includes/settings/class-alg-wc-user-products-settings-general.php:225
+msgid "Taxonomies Options"
+msgstr "Opțiuni Taxonomii"
+
+#: includes/settings/class-alg-wc-user-products-settings-general.php:230
+msgid "Total custom taxonomies"
+msgstr "Total taxonomii personalizate"
+
+#: includes/settings/class-alg-wc-user-products-settings-general.php:234
+#: includes/settings/class-alg-wc-user-products-settings-general.php:288
+msgid ""
+"New settings fields will be displayed if you change this option and save "
+"changes."
+msgstr ""
+"Se vor afișa câmpuri noi de setări dacă modifici această opțiune și salvezi "
+"modificările."
+
+#: includes/settings/class-alg-wc-user-products-settings-general.php:243
+msgid "Custom taxonomy"
+msgstr "Taxonomie personalizată"
+
+#: includes/settings/class-alg-wc-user-products-settings-general.php:244
+#: includes/settings/class-alg-wc-user-products-settings-general.php:298
+msgid "Enabled"
+msgstr "Activat"
+
+#: includes/settings/class-alg-wc-user-products-settings-general.php:250
+#: includes/settings/class-alg-wc-user-products-settings-general.php:304
+msgid "Required"
+msgstr "Obligatoriu"
+
+#: includes/settings/class-alg-wc-user-products-settings-general.php:256
+msgid "ID"
+msgstr "ID"
+
+#: includes/settings/class-alg-wc-user-products-settings-general.php:279
+msgid "Custom Fields Options"
+msgstr "Opțiuni Câmpuri Personalizate"
+
+#: includes/settings/class-alg-wc-user-products-settings-general.php:284
+msgid "Total custom fields"
+msgstr "Total câmpuri personalizate"
+
+#: includes/settings/class-alg-wc-user-products-settings-general.php:297
+msgid "Custom field"
+msgstr "Câmp personalizat"
+
+#: includes/settings/class-alg-wc-user-products-settings-general.php:310
+msgid "Meta key"
+msgstr "Cheie meta"
+
+#: includes/settings/class-alg-wc-user-products-settings-section.php:48
+msgid "Guest"
+msgstr "Vizitator"
+
+#: includes/settings/class-alg-wc-user-products-settings.php:25
+msgid "User Products"
+msgstr "Produse Utilizator"
+
+#: includes/settings/class-alg-wc-user-products-settings.php:42
+msgid "Reset Settings"
+msgstr "Resetare Setări"
+
+#: includes/settings/class-alg-wc-user-products-settings.php:47
+msgid "Reset section settings"
+msgstr "Resetare setări secțiune"
+
+#: includes/settings/class-alg-wc-user-products-settings.php:48
+msgid "Reset"
+msgstr "Resetare"
+
+#: includes/settings/class-alg-wc-user-products-settings.php:49
+msgid "Check the box and save changes to reset."
+msgstr "Bifează caseta și salvează modificările pentru resetare."
+
+#: user-products-for-woocommerce.php:162
+msgid "Settings"
+msgstr "Setări"
+
+#: user-products-for-woocommerce.php:165
+msgid "Go Pro"
+msgstr "Alege Pro"

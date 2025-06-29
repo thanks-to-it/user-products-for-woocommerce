@@ -1,0 +1,435 @@
+# Copyright (C) 2025 Algoritmika Ltd
+# This file is distributed under the GNU General Public License v3.0.
+msgid ""
+msgstr ""
+"Project-Id-Version: User Products for WooCommerce 2.0.0-dev\n"
+"Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/user-products-for-woocommerce\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"POT-Creation-Date: 2025-06-29T12:51:58+00:00\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"X-Generator: WP-CLI 2.11.0\n"
+"X-Domain: user-products-for-woocommerce\n"
+
+#. Plugin Name of the plugin
+#: user-products-for-woocommerce.php
+msgid "User Products for WooCommerce"
+msgstr ""
+
+#. Plugin URI of the plugin
+#: user-products-for-woocommerce.php
+msgid "https://wordpress.org/plugins/user-products-for-woocommerce/"
+msgstr ""
+
+#. Description of the plugin
+#: user-products-for-woocommerce.php
+#: includes/settings/class-alg-wc-user-products-settings-general.php:44
+msgid "Let users add new WooCommerce products from frontend."
+msgstr ""
+
+#. Author of the plugin
+#: user-products-for-woocommerce.php
+msgid "Algoritmika Ltd"
+msgstr ""
+
+#. Author URI of the plugin
+#: user-products-for-woocommerce.php
+msgid "https://profiles.wordpress.org/algoritmika/"
+msgstr ""
+
+#: includes/class-alg-wc-user-products-my-account.php:134
+#: includes/class-alg-wc-user-products-my-account.php:174
+msgid "Products"
+msgstr ""
+
+#: includes/class-alg-wc-user-products-shortcode-add-new.php:257
+msgid "Title is required!"
+msgstr ""
+
+#: includes/class-alg-wc-user-products-shortcode-add-new.php:270
+msgid "Product exists!"
+msgstr ""
+
+#: includes/class-alg-wc-user-products-shortcode-add-new.php:276
+#: includes/class-alg-wc-user-products-shortcode-add-new.php:761
+#: includes/settings/class-alg-wc-user-products-settings-fields.php:39
+msgid "Description"
+msgstr ""
+
+#: includes/class-alg-wc-user-products-shortcode-add-new.php:277
+#: includes/class-alg-wc-user-products-shortcode-add-new.php:791
+#: includes/settings/class-alg-wc-user-products-settings-fields.php:40
+msgid "Short Description"
+msgstr ""
+
+#: includes/class-alg-wc-user-products-shortcode-add-new.php:278
+#: includes/class-alg-wc-user-products-shortcode-add-new.php:860
+#: includes/settings/class-alg-wc-user-products-settings-fields.php:41
+msgid "Image"
+msgstr ""
+
+#: includes/class-alg-wc-user-products-shortcode-add-new.php:279
+#: includes/class-alg-wc-user-products-shortcode-add-new.php:879
+#: includes/settings/class-alg-wc-user-products-settings-fields.php:42
+msgid "Regular Price"
+msgstr ""
+
+#: includes/class-alg-wc-user-products-shortcode-add-new.php:280
+#: includes/class-alg-wc-user-products-shortcode-add-new.php:910
+#: includes/settings/class-alg-wc-user-products-settings-fields.php:43
+msgid "Sale Price"
+msgstr ""
+
+#: includes/class-alg-wc-user-products-shortcode-add-new.php:281
+#: includes/class-alg-wc-user-products-shortcode-add-new.php:941
+msgid "Product URL"
+msgstr ""
+
+#: includes/class-alg-wc-user-products-shortcode-add-new.php:282
+#: includes/class-alg-wc-user-products-shortcode-add-new.php:963
+#: includes/class-alg-wc-user-products-shortcodes.php:151
+#: includes/settings/class-alg-wc-user-products-settings-fields.php:45
+msgid "Categories"
+msgstr ""
+
+#: includes/class-alg-wc-user-products-shortcode-add-new.php:283
+#: includes/class-alg-wc-user-products-shortcode-add-new.php:973
+#: includes/class-alg-wc-user-products-shortcodes.php:152
+#: includes/settings/class-alg-wc-user-products-settings-fields.php:46
+msgid "Tags"
+msgstr ""
+
+#. Translators: %s: Field title.
+#: includes/class-alg-wc-user-products-shortcode-add-new.php:314
+msgid "%s is required!"
+msgstr ""
+
+#: includes/class-alg-wc-user-products-shortcode-add-new.php:323
+msgid "Sale price must be less than the regular price!"
+msgstr ""
+
+#: includes/class-alg-wc-user-products-shortcode-add-new.php:420
+#: includes/settings/class-alg-wc-user-products-settings-emails.php:78
+msgid "\"%product_title%\" product added"
+msgstr ""
+
+#: includes/class-alg-wc-user-products-shortcode-add-new.php:425
+#: includes/settings/class-alg-wc-user-products-settings-emails.php:87
+msgid "Product: \"%product_title%\""
+msgstr ""
+
+#: includes/class-alg-wc-user-products-shortcode-add-new.php:426
+#: includes/settings/class-alg-wc-user-products-settings-emails.php:88
+msgid "User ID: %user_id%"
+msgstr ""
+
+#: includes/class-alg-wc-user-products-shortcode-add-new.php:633
+msgid "Error!"
+msgstr ""
+
+#: includes/class-alg-wc-user-products-shortcode-add-new.php:647
+#: includes/settings/class-alg-wc-user-products-settings-messages.php:50
+msgid "\"%product_title%\" successfully added!"
+msgstr ""
+
+#: includes/class-alg-wc-user-products-shortcode-add-new.php:662
+#: includes/settings/class-alg-wc-user-products-settings-messages.php:57
+msgid "\"%product_title%\" successfully edited!"
+msgstr ""
+
+#: includes/class-alg-wc-user-products-shortcode-add-new.php:682
+#: includes/class-alg-wc-user-products-shortcodes.php:86
+#: includes/class-alg-wc-user-products-shortcodes.php:97
+msgid "Wrong user ID!"
+msgstr ""
+
+#: includes/class-alg-wc-user-products-shortcode-add-new.php:697
+msgid "Add New Product"
+msgstr ""
+
+#: includes/class-alg-wc-user-products-shortcode-add-new.php:698
+msgid "Edit Product"
+msgstr ""
+
+#: includes/class-alg-wc-user-products-shortcode-add-new.php:714
+msgid "required"
+msgstr ""
+
+#: includes/class-alg-wc-user-products-shortcode-add-new.php:732
+#: includes/class-alg-wc-user-products-shortcodes.php:148
+#: includes/class-alg-wc-user-products-shortcodes.php:149
+#: includes/settings/class-alg-wc-user-products-settings-custom-fields.php:74
+#: includes/settings/class-alg-wc-user-products-settings-taxonomies.php:72
+msgid "Title"
+msgstr ""
+
+#: includes/class-alg-wc-user-products-shortcode-add-new.php:837
+#: includes/class-alg-wc-user-products-shortcodes.php:263
+msgid "Are you sure?"
+msgstr ""
+
+#: includes/class-alg-wc-user-products-shortcode-add-new.php:840
+#: includes/class-alg-wc-user-products-shortcodes.php:266
+msgid "Delete"
+msgstr ""
+
+#: includes/class-alg-wc-user-products-shortcode-add-new.php:1044
+#: includes/settings/class-alg-wc-user-products-settings-general.php:101
+msgid "Add"
+msgstr ""
+
+#: includes/class-alg-wc-user-products-shortcode-add-new.php:1045
+#: includes/class-alg-wc-user-products-shortcodes.php:255
+msgid "Edit"
+msgstr ""
+
+#: includes/class-alg-wc-user-products-shortcodes.php:146
+#: includes/class-alg-wc-user-products-shortcodes.php:147
+msgid "Status"
+msgstr ""
+
+#: includes/class-alg-wc-user-products-shortcodes.php:150
+msgid "Actions"
+msgstr ""
+
+#: includes/class-alg-wc-user-products-shortcodes.php:275
+msgid "View"
+msgstr ""
+
+#: includes/class-alg-wc-user-products-shortcodes.php:353
+msgid "You have no products yet."
+msgstr ""
+
+#: includes/class-alg-wc-user-products.php:179
+msgid "Settings"
+msgstr ""
+
+#: includes/settings/class-alg-wc-user-products-settings-custom-fields.php:25
+msgid "Custom Fields"
+msgstr ""
+
+#: includes/settings/class-alg-wc-user-products-settings-custom-fields.php:40
+msgid "Custom Fields Options"
+msgstr ""
+
+#: includes/settings/class-alg-wc-user-products-settings-custom-fields.php:45
+msgid "Total custom fields"
+msgstr ""
+
+#: includes/settings/class-alg-wc-user-products-settings-custom-fields.php:49
+#: includes/settings/class-alg-wc-user-products-settings-taxonomies.php:47
+msgid "New settings fields will be displayed if you change this option and save changes."
+msgstr ""
+
+#: includes/settings/class-alg-wc-user-products-settings-custom-fields.php:55
+msgid "Custom field"
+msgstr ""
+
+#: includes/settings/class-alg-wc-user-products-settings-custom-fields.php:56
+#: includes/settings/class-alg-wc-user-products-settings-taxonomies.php:54
+msgid "Enabled"
+msgstr ""
+
+#: includes/settings/class-alg-wc-user-products-settings-custom-fields.php:62
+#: includes/settings/class-alg-wc-user-products-settings-taxonomies.php:60
+msgid "Required"
+msgstr ""
+
+#: includes/settings/class-alg-wc-user-products-settings-custom-fields.php:68
+msgid "Meta key"
+msgstr ""
+
+#: includes/settings/class-alg-wc-user-products-settings-emails.php:25
+#: includes/settings/class-alg-wc-user-products-settings-emails.php:55
+#: includes/settings/class-alg-wc-user-products-settings-emails.php:61
+msgid "Emails"
+msgstr ""
+
+#. Translators: %s: Placeholder list.
+#: includes/settings/class-alg-wc-user-products-settings-emails.php:38
+msgid "Placeholders: %s."
+msgstr ""
+
+#: includes/settings/class-alg-wc-user-products-settings-emails.php:57
+msgid "Send an email when a new product is added."
+msgstr ""
+
+#: includes/settings/class-alg-wc-user-products-settings-emails.php:62
+#: includes/settings/class-alg-wc-user-products-settings-general.php:93
+msgid "Enable"
+msgstr ""
+
+#: includes/settings/class-alg-wc-user-products-settings-emails.php:68
+msgid "Send to"
+msgstr ""
+
+#: includes/settings/class-alg-wc-user-products-settings-emails.php:75
+msgid "Subject"
+msgstr ""
+
+#: includes/settings/class-alg-wc-user-products-settings-emails.php:83
+msgid "Message"
+msgstr ""
+
+#: includes/settings/class-alg-wc-user-products-settings-fields.php:25
+msgid "Fields"
+msgstr ""
+
+#: includes/settings/class-alg-wc-user-products-settings-fields.php:44
+msgid "Product URL (for \"External/Affiliate\" product type only)"
+msgstr ""
+
+#: includes/settings/class-alg-wc-user-products-settings-fields.php:61
+msgid "Additional fields"
+msgstr ""
+
+#: includes/settings/class-alg-wc-user-products-settings-fields.php:69
+msgid "Is required"
+msgstr ""
+
+#: includes/settings/class-alg-wc-user-products-settings-fields.php:79
+msgid "Fields Options"
+msgstr ""
+
+#: includes/settings/class-alg-wc-user-products-settings-fields.php:81
+msgid "<em>Title</em> field is always enabled and required."
+msgstr ""
+
+#: includes/settings/class-alg-wc-user-products-settings-general.php:25
+msgid "General"
+msgstr ""
+
+#: includes/settings/class-alg-wc-user-products-settings-general.php:40
+msgid "User Products Options"
+msgstr ""
+
+#. Translators: %s: Shortcode name.
+#: includes/settings/class-alg-wc-user-products-settings-general.php:47
+msgid "Use %s shortcode to add product upload form to frontend."
+msgstr ""
+
+#: includes/settings/class-alg-wc-user-products-settings-general.php:53
+msgid "Price step (number of decimals)"
+msgstr ""
+
+#: includes/settings/class-alg-wc-user-products-settings-general.php:54
+msgid "Used for price fields only."
+msgstr ""
+
+#: includes/settings/class-alg-wc-user-products-settings-general.php:61
+msgid "User visibility"
+msgstr ""
+
+#: includes/settings/class-alg-wc-user-products-settings-general.php:63
+msgid "If you want for product add form to be visible to selected user roles only, set roles here."
+msgstr ""
+
+#: includes/settings/class-alg-wc-user-products-settings-general.php:64
+msgid "Ignored if empty."
+msgstr ""
+
+#: includes/settings/class-alg-wc-user-products-settings-general.php:73
+msgid "Product type"
+msgstr ""
+
+#: includes/settings/class-alg-wc-user-products-settings-general.php:79
+msgid "Simple product"
+msgstr ""
+
+#: includes/settings/class-alg-wc-user-products-settings-general.php:80
+msgid "External/Affiliate product"
+msgstr ""
+
+#: includes/settings/class-alg-wc-user-products-settings-general.php:84
+msgid "Product status"
+msgstr ""
+
+#: includes/settings/class-alg-wc-user-products-settings-general.php:92
+msgid "Require unique title"
+msgstr ""
+
+#: includes/settings/class-alg-wc-user-products-settings-general.php:99
+msgid "Products tab"
+msgstr ""
+
+#: includes/settings/class-alg-wc-user-products-settings-general.php:100
+msgid "Adds \"Products\" tab to user's \"My account\" page."
+msgstr ""
+
+#: includes/settings/class-alg-wc-user-products-settings-general.php:108
+msgid "Tab content"
+msgstr ""
+
+#. Translators: %s: Shortcode name.
+#: includes/settings/class-alg-wc-user-products-settings-general.php:111
+msgid "You should use %s shortcode here."
+msgstr ""
+
+#: includes/settings/class-alg-wc-user-products-settings-messages.php:25
+#: includes/settings/class-alg-wc-user-products-settings-messages.php:38
+msgid "Messages"
+msgstr ""
+
+#. Translators: %s: Placeholder name.
+#: includes/settings/class-alg-wc-user-products-settings-messages.php:42
+msgid "Replaced value: %s."
+msgstr ""
+
+#: includes/settings/class-alg-wc-user-products-settings-messages.php:48
+msgid "Product successfully added"
+msgstr ""
+
+#: includes/settings/class-alg-wc-user-products-settings-messages.php:55
+msgid "Product successfully edited"
+msgstr ""
+
+#: includes/settings/class-alg-wc-user-products-settings-section.php:79
+msgid "Guest"
+msgstr ""
+
+#: includes/settings/class-alg-wc-user-products-settings-taxonomies.php:25
+msgid "Taxonomies"
+msgstr ""
+
+#: includes/settings/class-alg-wc-user-products-settings-taxonomies.php:38
+msgid "Taxonomies Options"
+msgstr ""
+
+#: includes/settings/class-alg-wc-user-products-settings-taxonomies.php:43
+msgid "Total custom taxonomies"
+msgstr ""
+
+#: includes/settings/class-alg-wc-user-products-settings-taxonomies.php:53
+msgid "Custom taxonomy"
+msgstr ""
+
+#: includes/settings/class-alg-wc-user-products-settings-taxonomies.php:66
+msgid "ID"
+msgstr ""
+
+#: includes/settings/class-alg-wc-user-products-settings.php:26
+msgid "User Products"
+msgstr ""
+
+#: includes/settings/class-alg-wc-user-products-settings.php:52
+msgid "Reset Settings"
+msgstr ""
+
+#: includes/settings/class-alg-wc-user-products-settings.php:57
+msgid "Reset section settings"
+msgstr ""
+
+#: includes/settings/class-alg-wc-user-products-settings.php:58
+msgid "Reset"
+msgstr ""
+
+#: includes/settings/class-alg-wc-user-products-settings.php:59
+msgid "Check the box and save changes to reset."
+msgstr ""
+
+#: includes/settings/class-alg-wc-user-products-settings.php:99
+msgid "Your settings have been reset."
+msgstr ""

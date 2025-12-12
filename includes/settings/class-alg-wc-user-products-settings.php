@@ -1,8 +1,8 @@
 <?php
 /**
- * User Products for WooCommerce - Settings
+ * ZILI User Products for WooCommerce - Settings
  *
- * @version 2.0.0
+ * @version 2.0.1
  * @since   1.0.0
  *
  * @author  Algoritmika Ltd
@@ -17,13 +17,13 @@ class Alg_WC_User_Products_Settings extends WC_Settings_Page {
 	/**
 	 * Constructor.
 	 *
-	 * @version 2.0.0
+	 * @version 2.0.1
 	 * @since   1.0.0
 	 */
 	function __construct() {
 
 		$this->id    = 'alg_wc_user_products';
-		$this->label = __( 'User Products', 'user-products-for-woocommerce' );
+		$this->label = __( 'ZILI User Products', 'zili-user-products-for-woocommerce' );
 		parent::__construct();
 
 		// Sections
@@ -40,23 +40,23 @@ class Alg_WC_User_Products_Settings extends WC_Settings_Page {
 	/**
 	 * get_settings.
 	 *
-	 * @version 1.1.0
+	 * @version 2.0.1
 	 * @since   1.0.0
 	 */
 	function get_settings() {
 		global $current_section;
 		return array_merge(
-			apply_filters( 'woocommerce_get_settings_' . $this->id . '_' . $current_section, array() ),
+			apply_filters( 'woocommerce_get_settings_' . $this->id . '_' . $current_section, array() ), // phpcs:ignore WordPress.NamingConventions.PrefixAllGlobals.NonPrefixedHooknameFound
 			array(
 				array(
-					'title'     => __( 'Reset Settings', 'user-products-for-woocommerce' ),
+					'title'     => __( 'Reset Settings', 'zili-user-products-for-woocommerce' ),
 					'type'      => 'title',
 					'id'        => $this->id . '_' . $current_section . '_reset_options',
 				),
 				array(
-					'title'     => __( 'Reset section settings', 'user-products-for-woocommerce' ),
-					'desc'      => '<strong>' . __( 'Reset', 'user-products-for-woocommerce' ) . '</strong>',
-					'desc_tip'  => __( 'Check the box and save changes to reset.', 'user-products-for-woocommerce' ),
+					'title'     => __( 'Reset section settings', 'zili-user-products-for-woocommerce' ),
+					'desc'      => '<strong>' . __( 'Reset', 'zili-user-products-for-woocommerce' ) . '</strong>',
+					'desc_tip'  => __( 'Check the box and save changes to reset.', 'zili-user-products-for-woocommerce' ),
 					'id'        => $this->id . '_' . $current_section . '_reset',
 					'default'   => 'no',
 					'type'      => 'checkbox',
@@ -91,12 +91,12 @@ class Alg_WC_User_Products_Settings extends WC_Settings_Page {
 	/**
 	 * admin_notice_settings_reset.
 	 *
-	 * @version 2.0.0
+	 * @version 2.0.1
 	 * @since   2.0.0
 	 */
 	function admin_notice_settings_reset() {
 		echo '<div class="notice notice-warning is-dismissible"><p><strong>' .
-			esc_html__( 'Your settings have been reset.', 'user-products-for-woocommerce' ) .
+			esc_html__( 'Your settings have been reset.', 'zili-user-products-for-woocommerce' ) .
 		'</strong></p></div>';
 	}
 

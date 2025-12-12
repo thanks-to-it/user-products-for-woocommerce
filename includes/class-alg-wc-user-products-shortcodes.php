@@ -1,8 +1,8 @@
 <?php
 /**
- * User Products for WooCommerce - Shortcodes Class
+ * ZILI User Products for WooCommerce - Shortcodes Class
  *
- * @version 2.0.0
+ * @version 2.0.1
  * @since   1.2.0
  *
  * @author  Algoritmika Ltd
@@ -29,7 +29,7 @@ class Alg_WC_User_Products_Shortcodes {
 	/**
 	 * wc_user_products_list.
 	 *
-	 * @version 2.0.0
+	 * @version 2.0.1
 	 * @since   1.2.0
 	 *
 	 * @todo    (v2.0.0) escape output?
@@ -83,7 +83,7 @@ class Alg_WC_User_Products_Shortcodes {
 			$post_author_id = get_post_field( 'post_author', $product_id );
 			if ( $user_id != $post_author_id ) {
 				$output .= '<p>' .
-					__( 'Wrong user ID!', 'user-products-for-woocommerce' ) .
+					__( 'Wrong user ID!', 'zili-user-products-for-woocommerce' ) .
 				'</p>';
 			} else {
 				wp_delete_post( $product_id, true );
@@ -94,7 +94,7 @@ class Alg_WC_User_Products_Shortcodes {
 			$post_author_id = get_post_field( 'post_author', $product_id );
 			if ( $user_id != $post_author_id ) {
 				$output .= '<p>' .
-					__( 'Wrong user ID!', 'user-products-for-woocommerce' ) .
+					__( 'Wrong user ID!', 'zili-user-products-for-woocommerce' ) .
 				'</p>';
 			} else {
 				$output .= do_shortcode(
@@ -143,13 +143,13 @@ class Alg_WC_User_Products_Shortcodes {
 				'product_nr'        => '#',
 				'thumbnail'         => '',
 				'thumbnail_no_link' => '',
-				'status'            => __( 'Status', 'user-products-for-woocommerce' ),
-				'status_label'      => __( 'Status', 'user-products-for-woocommerce' ),
-				'title'             => __( 'Title', 'user-products-for-woocommerce' ),
-				'title_no_link'     => __( 'Title', 'user-products-for-woocommerce' ),
-				'actions'           => __( 'Actions', 'user-products-for-woocommerce' ),
-				'categories'        => __( 'Categories', 'user-products-for-woocommerce' ),
-				'tags'              => __( 'Tags', 'user-products-for-woocommerce' ),
+				'status'            => __( 'Status', 'zili-user-products-for-woocommerce' ),
+				'status_label'      => __( 'Status', 'zili-user-products-for-woocommerce' ),
+				'title'             => __( 'Title', 'zili-user-products-for-woocommerce' ),
+				'title_no_link'     => __( 'Title', 'zili-user-products-for-woocommerce' ),
+				'actions'           => __( 'Actions', 'zili-user-products-for-woocommerce' ),
+				'categories'        => __( 'Categories', 'zili-user-products-for-woocommerce' ),
+				'tags'              => __( 'Tags', 'zili-user-products-for-woocommerce' ),
 			);
 			$column_titles = (
 				'' !== $atts['column_titles'] ?
@@ -252,7 +252,7 @@ class Alg_WC_User_Products_Shortcodes {
 										' class="button"' .
 										' href="' . $edit_url . '"' .
 									'>' .
-										__( 'Edit', 'user-products-for-woocommerce' ) .
+										__( 'Edit', 'zili-user-products-for-woocommerce' ) .
 									'</a>'
 								),
 								'%delete%' => (
@@ -260,10 +260,10 @@ class Alg_WC_User_Products_Shortcodes {
 										' class="button"' .
 										' href="' . $delete_url . '"' .
 										' onclick="return confirm(\'' .
-											__( 'Are you sure?', 'user-products-for-woocommerce' ) .
+											__( 'Are you sure?', 'zili-user-products-for-woocommerce' ) .
 										'\')"' .
 									'>' .
-										__( 'Delete', 'user-products-for-woocommerce' ) .
+										__( 'Delete', 'zili-user-products-for-woocommerce' ) .
 									'</a>'
 								),
 								'%view%'   => (
@@ -272,7 +272,7 @@ class Alg_WC_User_Products_Shortcodes {
 										' target="_blank"' .
 										' href="' . $view_url . '"' .
 									'>' .
-										__( 'View', 'user-products-for-woocommerce' ) .
+										__( 'View', 'zili-user-products-for-woocommerce' ) .
 									'</a>'
 								),
 							);
@@ -350,7 +350,7 @@ class Alg_WC_User_Products_Shortcodes {
 
 		} else {
 			$output .= '<p><em>' .
-				__( 'You have no products yet.', 'user-products-for-woocommerce' ) .
+				__( 'You have no products yet.', 'zili-user-products-for-woocommerce' ) .
 			'</em></p>';
 		}
 

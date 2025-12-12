@@ -2,26 +2,26 @@
 # This file is distributed under the GNU General Public License v3.0.
 msgid ""
 msgstr ""
-"Project-Id-Version: User Products for WooCommerce 2.0.0\n"
+"Project-Id-Version: ZILI User Products for WooCommerce 2.0.1-dev\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/user-products-for-woocommerce\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2025-06-29T20:20:07+00:00\n"
+"POT-Creation-Date: 2025-12-12T23:22:46+00:00\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "X-Generator: WP-CLI 2.11.0\n"
-"X-Domain: user-products-for-woocommerce\n"
+"X-Domain: zili-user-products-for-woocommerce\n"
 
 #. Plugin Name of the plugin
 #: user-products-for-woocommerce.php
-msgid "User Products for WooCommerce"
+msgid "ZILI User Products for WooCommerce"
 msgstr ""
 
 #. Plugin URI of the plugin
 #: user-products-for-woocommerce.php
-msgid "https://wordpress.org/plugins/user-products-for-woocommerce/"
+msgid "https://wordpress.org/plugins/zili-user-products-for-woocommerce/"
 msgstr ""
 
 #. Description of the plugin
@@ -37,7 +37,7 @@ msgstr ""
 
 #. Author URI of the plugin
 #: user-products-for-woocommerce.php
-msgid "https://profiles.wordpress.org/algoritmika/"
+msgid "https://algoritmika.com"
 msgstr ""
 
 #: includes/class-alg-wc-user-products-my-account.php:134
@@ -303,7 +303,7 @@ msgid "General"
 msgstr ""
 
 #: includes/settings/class-alg-wc-user-products-settings-general.php:40
-msgid "User Products Options"
+msgid "Options"
 msgstr ""
 
 #. Translators: %s: Shortcode name.
@@ -411,7 +411,7 @@ msgid "ID"
 msgstr ""
 
 #: includes/settings/class-alg-wc-user-products-settings.php:26
-msgid "User Products"
+msgid "ZILI User Products"
 msgstr ""
 
 #: includes/settings/class-alg-wc-user-products-settings.php:52

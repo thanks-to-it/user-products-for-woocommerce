@@ -1,8 +1,8 @@
 <?php
 /**
- * User Products for WooCommerce - Fields Section Settings
+ * ZILI User Products for WooCommerce - Fields Section Settings
  *
- * @version 2.0.0
+ * @version 2.0.1
  * @since   1.5.0
  *
  * @author  Algoritmika Ltd
@@ -17,33 +17,33 @@ class Alg_WC_User_Products_Settings_Fields extends Alg_WC_User_Products_Settings
 	/**
 	 * Constructor.
 	 *
-	 * @version 1.5.0
+	 * @version 2.0.1
 	 * @since   1.5.0
 	 */
 	function __construct() {
 		$this->id   = 'fields';
-		$this->desc = __( 'Fields', 'user-products-for-woocommerce' );
+		$this->desc = __( 'Fields', 'zili-user-products-for-woocommerce' );
 		parent::__construct();
 	}
 
 	/**
 	 * get_settings.
 	 *
-	 * @version 2.0.0
+	 * @version 2.0.1
 	 * @since   1.5.0
 	 *
 	 * @todo    (feature) customizable field titles
 	 */
 	function get_settings() {
 		$fields = array(
-			'desc'          => __( 'Description', 'user-products-for-woocommerce' ),
-			'short_desc'    => __( 'Short Description', 'user-products-for-woocommerce' ),
-			'image'         => __( 'Image', 'user-products-for-woocommerce' ),
-			'regular_price' => __( 'Regular Price', 'user-products-for-woocommerce' ),
-			'sale_price'    => __( 'Sale Price', 'user-products-for-woocommerce' ),
-			'external_url'  => __( 'Product URL (for "External/Affiliate" product type only)', 'user-products-for-woocommerce' ),
-			'cats'          => __( 'Categories', 'user-products-for-woocommerce' ),
-			'tags'          => __( 'Tags', 'user-products-for-woocommerce' ),
+			'desc'          => __( 'Description', 'zili-user-products-for-woocommerce' ),
+			'short_desc'    => __( 'Short Description', 'zili-user-products-for-woocommerce' ),
+			'image'         => __( 'Image', 'zili-user-products-for-woocommerce' ),
+			'regular_price' => __( 'Regular Price', 'zili-user-products-for-woocommerce' ),
+			'sale_price'    => __( 'Sale Price', 'zili-user-products-for-woocommerce' ),
+			'external_url'  => __( 'Product URL (for "External/Affiliate" product type only)', 'zili-user-products-for-woocommerce' ),
+			'cats'          => __( 'Categories', 'zili-user-products-for-woocommerce' ),
+			'tags'          => __( 'Tags', 'zili-user-products-for-woocommerce' ),
 		);
 		$fields_enabled_options  = array();
 		$fields_required_options = array();
@@ -58,7 +58,7 @@ class Alg_WC_User_Products_Settings_Fields extends Alg_WC_User_Products_Settings
 				$checkboxgroup = 'end';
 			}
 			$fields_enabled_options[] = array(
-				'title'             => ( 1 === $i ? __( 'Additional fields', 'user-products-for-woocommerce' ) : '' ),
+				'title'             => ( 1 === $i ? __( 'Additional fields', 'zili-user-products-for-woocommerce' ) : '' ),
 				'desc'              => $field_desc,
 				'id'                => "alg_wc_user_products_fields_enabled[{$field_id}]",
 				'default'           => 'no',
@@ -66,7 +66,7 @@ class Alg_WC_User_Products_Settings_Fields extends Alg_WC_User_Products_Settings
 				'checkboxgroup'     => $checkboxgroup,
 			);
 			$fields_required_options[] = array(
-				'title'             => ( 1 === $i ? __( 'Is required', 'user-products-for-woocommerce' ) : '' ),
+				'title'             => ( 1 === $i ? __( 'Is required', 'zili-user-products-for-woocommerce' ) : '' ),
 				'desc'              => $field_desc,
 				'id'                => "alg_wc_user_products_fields_required[{$field_id}]",
 				'default'           => 'no',
@@ -76,9 +76,9 @@ class Alg_WC_User_Products_Settings_Fields extends Alg_WC_User_Products_Settings
 		}
 		$settings = array_merge(
 			array( array(
-				'title'    => __( 'Fields Options', 'user-products-for-woocommerce' ),
+				'title'    => __( 'Fields Options', 'zili-user-products-for-woocommerce' ),
 				'type'     => 'title',
-				'desc'     => __( '<em>Title</em> field is always enabled and required.', 'user-products-for-woocommerce' ),
+				'desc'     => __( '<em>Title</em> field is always enabled and required.', 'zili-user-products-for-woocommerce' ),
 				'id'       => 'alg_wc_user_products_fields_options',
 			) ),
 			$fields_enabled_options,

@@ -1,8 +1,8 @@
 <?php
 /**
- * User Products for WooCommerce - My Account Class
+ * ZILI User Products for WooCommerce - My Account Class
  *
- * @version 2.0.0
+ * @version 2.0.1
  * @since   1.0.0
  *
  * @author  Algoritmika Ltd
@@ -112,7 +112,7 @@ class Alg_WC_User_Products_My_Account {
 	/*
 	 * Change endpoint title.
 	 *
-	 * @version 1.1.0
+	 * @version 2.0.1
 	 * @since   1.0.0
 	 *
 	 * @param   string $title
@@ -131,7 +131,7 @@ class Alg_WC_User_Products_My_Account {
 			in_the_loop() &&
 			is_account_page()
 		) {
-			$title = __( 'Products', 'user-products-for-woocommerce' );
+			$title = __( 'Products', 'zili-user-products-for-woocommerce' );
 			remove_filter( 'the_title', array( $this, 'change_my_products_endpoint_title' ) );
 		}
 		return $title;
@@ -163,7 +163,7 @@ class Alg_WC_User_Products_My_Account {
 	/**
 	 * add_my_products_tab_my_account_page.
 	 *
-	 * @version 1.1.0
+	 * @version 2.0.1
 	 * @since   1.0.0
 	 *
 	 * @todo    (feature) customizable tab title
@@ -171,7 +171,7 @@ class Alg_WC_User_Products_My_Account {
 	 */
 	function add_my_products_tab_my_account_page( $items ) {
 		$new_items = array(
-			'alg-wc-my-products' => __( 'Products', 'user-products-for-woocommerce' ),
+			'alg-wc-my-products' => __( 'Products', 'zili-user-products-for-woocommerce' ),
 		);
 		return $this->insert_after_helper( $items, $new_items, 'orders' );
 	}

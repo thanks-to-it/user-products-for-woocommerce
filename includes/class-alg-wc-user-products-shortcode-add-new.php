@@ -1,8 +1,8 @@
 <?php
 /**
- * User Products for WooCommerce - Shortcode Class
+ * ZILI User Products for WooCommerce - Shortcode Class
  *
- * @version 2.0.0
+ * @version 2.0.1
  * @since   1.0.0
  *
  * @author  Algoritmika Ltd
@@ -267,14 +267,14 @@ class Alg_WC_User_Products_Shortcode {
 	/**
 	 * validate_args.
 	 *
-	 * @version 2.0.0
+	 * @version 2.0.1
 	 * @since   1.0.0
 	 */
 	function validate_args( $args, $shortcode_atts ) {
 		$errors = '';
 		if ( '' == $args['title'] ) {
 			$errors .= '<li>' .
-				__( 'Title is required!', 'user-products-for-woocommerce' ) .
+				__( 'Title is required!', 'zili-user-products-for-woocommerce' ) .
 			'</li>';
 		}
 
@@ -287,20 +287,20 @@ class Alg_WC_User_Products_Shortcode {
 			}
 			if ( post_exists( $args['title'] ) ) {
 				$errors .= '<li>' .
-					__( 'Product exists!', 'user-products-for-woocommerce' ) .
+					__( 'Product exists!', 'zili-user-products-for-woocommerce' ) .
 				'</li>';
 			}
 		}
 
 		$fields = array(
-			'desc'          => __( 'Description', 'user-products-for-woocommerce' ),
-			'short_desc'    => __( 'Short Description', 'user-products-for-woocommerce' ),
-			'image'         => __( 'Image', 'user-products-for-woocommerce' ),
-			'regular_price' => __( 'Regular Price', 'user-products-for-woocommerce' ),
-			'sale_price'    => __( 'Sale Price', 'user-products-for-woocommerce' ),
-			'external_url'  => __( 'Product URL', 'user-products-for-woocommerce' ),
-			'cats'          => __( 'Categories', 'user-products-for-woocommerce' ),
-			'tags'          => __( 'Tags', 'user-products-for-woocommerce' ),
+			'desc'          => __( 'Description', 'zili-user-products-for-woocommerce' ),
+			'short_desc'    => __( 'Short Description', 'zili-user-products-for-woocommerce' ),
+			'image'         => __( 'Image', 'zili-user-products-for-woocommerce' ),
+			'regular_price' => __( 'Regular Price', 'zili-user-products-for-woocommerce' ),
+			'sale_price'    => __( 'Sale Price', 'zili-user-products-for-woocommerce' ),
+			'external_url'  => __( 'Product URL', 'zili-user-products-for-woocommerce' ),
+			'cats'          => __( 'Categories', 'zili-user-products-for-woocommerce' ),
+			'tags'          => __( 'Tags', 'zili-user-products-for-woocommerce' ),
 		);
 		for ( $i = 1; $i <= $this->the_atts['custom_taxonomies_total']; $i++ ) {
 			$fields[ 'custom_taxonomy_' . $i ] = $this->the_atts[ 'custom_taxonomy_' . $i . '_title' ];
@@ -331,7 +331,7 @@ class Alg_WC_User_Products_Shortcode {
 				if ( $is_missing ) {
 					$errors .= '<li>' . sprintf(
 						/* Translators: %s: Field title. */
-						__( '%s is required!', 'user-products-for-woocommerce' ),
+						__( '%s is required!', 'zili-user-products-for-woocommerce' ),
 						$field_desc
 					) . '</li>';
 				}
@@ -340,7 +340,7 @@ class Alg_WC_User_Products_Shortcode {
 
 		if ( $args['sale_price'] > $args['regular_price'] ) {
 			$errors .= '<li>' .
-				__( 'Sale price must be less than the regular price!', 'user-products-for-woocommerce' ) .
+				__( 'Sale price must be less than the regular price!', 'zili-user-products-for-woocommerce' ) .
 			'</li>';
 		}
 		return ( '' === $errors ? true : $errors );
@@ -421,7 +421,7 @@ class Alg_WC_User_Products_Shortcode {
 	/**
 	 * maybe_send_email.
 	 *
-	 * @version 1.5.0
+	 * @version 2.0.1
 	 * @since   1.5.0
 	 *
 	 * @todo    (dev) add more placeholders, e.g., `%product_url%`
@@ -437,13 +437,13 @@ class Alg_WC_User_Products_Shortcode {
 		$to      = get_option( 'alg_wc_user_products_emails_to', '' );
 		$subject = get_option(
 			'alg_wc_user_products_emails_subject',
-			__( '"%product_title%" product added', 'user-products-for-woocommerce' )
+			__( '"%product_title%" product added', 'zili-user-products-for-woocommerce' )
 		);
 		$message = get_option(
 			'alg_wc_user_products_emails_message',
 			(
-				'<p>' . __( 'Product: "%product_title%"', 'user-products-for-woocommerce' ) . '</p>' . PHP_EOL .
-				'<p>' . __( 'User ID: %user_id%', 'user-products-for-woocommerce' ) . '</p>' // phpcs:ignore WordPress.WP.I18n.MissingTranslatorsComment
+				'<p>' . __( 'Product: "%product_title%"', 'zili-user-products-for-woocommerce' ) . '</p>' . PHP_EOL .
+				'<p>' . __( 'User ID: %user_id%', 'zili-user-products-for-woocommerce' ) . '</p>' // phpcs:ignore WordPress.WP.I18n.MissingTranslatorsComment
 			)
 		);
 
@@ -522,7 +522,7 @@ class Alg_WC_User_Products_Shortcode {
 	/**
 	 * wc_user_products_add_new.
 	 *
-	 * @version 2.0.0
+	 * @version 2.0.1
 	 * @since   1.0.0
 	 *
 	 * @todo    (v2.0.0) escape output?
@@ -650,7 +650,7 @@ class Alg_WC_User_Products_Shortcode {
 					$notice_html .= '<div class="woocommerce">' .
 						'<ul class="woocommerce-error">' .
 							'<li>' .
-								__( 'Error!', 'user-products-for-woocommerce' ) .
+								__( 'Error!', 'zili-user-products-for-woocommerce' ) .
 							'</li>' .
 						'</ul>' .
 					'</div>';
@@ -664,7 +664,7 @@ class Alg_WC_User_Products_Shortcode {
 									$args['title'],
 									get_option(
 										'alg_wc_user_products_message_product_successfully_added',
-										__( '"%product_title%" successfully added!', 'user-products-for-woocommerce' )
+										__( '"%product_title%" successfully added!', 'zili-user-products-for-woocommerce' )
 									)
 								) .
 							'</div>' .
@@ -679,7 +679,7 @@ class Alg_WC_User_Products_Shortcode {
 									$args['title'],
 									get_option(
 										'alg_wc_user_products_message_product_successfully_edited',
-										__( '"%product_title%" successfully edited!', 'user-products-for-woocommerce' )
+										__( '"%product_title%" successfully edited!', 'zili-user-products-for-woocommerce' )
 									)
 								) .
 							'</div>' .
@@ -699,7 +699,7 @@ class Alg_WC_User_Products_Shortcode {
 			$user_id        = get_current_user_id();
 			if ( $user_id != $post_author_id ) {
 				echo '<p>' .
-					esc_html__( 'Wrong user ID!', 'user-products-for-woocommerce' ) .
+					esc_html__( 'Wrong user ID!', 'zili-user-products-for-woocommerce' ) .
 				'</p>';
 			} else {
 				$image_id = get_post_thumbnail_id( $product_id );
@@ -714,8 +714,8 @@ class Alg_WC_User_Products_Shortcode {
 		$header_html .= '<h3>';
 		$header_html .= (
 			0 == $atts['product_id'] ?
-			__( 'Add New Product', 'user-products-for-woocommerce' ) :
-			__( 'Edit Product', 'user-products-for-woocommerce' )
+			__( 'Add New Product', 'zili-user-products-for-woocommerce' ) :
+			__( 'Edit Product', 'zili-user-products-for-woocommerce' )
 		);
 		$header_html .= '</h3>';
 		$header_html .= '<form' .
@@ -731,7 +731,7 @@ class Alg_WC_User_Products_Shortcode {
 
 		$required_mark_html_template = '&nbsp;<abbr' .
 			' class="required"' .
-			' title="' . __( 'required', 'user-products-for-woocommerce' ) . '"' .
+			' title="' . __( 'required', 'zili-user-products-for-woocommerce' ) . '"' .
 		'>*</abbr>';
 
 		$price_step = sprintf(
@@ -749,7 +749,7 @@ class Alg_WC_User_Products_Shortcode {
 		$input_style = 'width:100%;';
 		$table_data[] = array(
 			'<label for="alg_wc_add_new_product_title">' .
-				__( 'Title', 'user-products-for-woocommerce' ) .
+				__( 'Title', 'zili-user-products-for-woocommerce' ) .
 				$required_mark_html_template .
 			'</label>',
 			'<input' .
@@ -778,7 +778,7 @@ class Alg_WC_User_Products_Shortcode {
 			);
 			$table_data[] = array(
 				'<label for="alg_wc_add_new_product_desc">' .
-					__( 'Description', 'user-products-for-woocommerce' ) .
+					__( 'Description', 'zili-user-products-for-woocommerce' ) .
 					$required_mark_html .
 				'</label>',
 				'<textarea' .
@@ -808,7 +808,7 @@ class Alg_WC_User_Products_Shortcode {
 			);
 			$table_data[] = array(
 				'<label for="alg_wc_add_new_product_short_desc">' .
-					__( 'Short Description', 'user-products-for-woocommerce' ) .
+					__( 'Short Description', 'zili-user-products-for-woocommerce' ) .
 					$required_mark_html .
 				'</label>',
 				'<textarea' .
@@ -854,10 +854,10 @@ class Alg_WC_User_Products_Shortcode {
 								$atts['product_id']
 							) . '"' .
 							' onclick="return confirm(\'' .
-								__( 'Are you sure?', 'user-products-for-woocommerce' ) .
+								__( 'Are you sure?', 'zili-user-products-for-woocommerce' ) .
 							'\')"' .
 						'>' .
-							__( 'Delete', 'user-products-for-woocommerce' ) .
+							__( 'Delete', 'zili-user-products-for-woocommerce' ) .
 						'</a>' .
 						'<br>' .
 						get_the_post_thumbnail(
@@ -877,7 +877,7 @@ class Alg_WC_User_Products_Shortcode {
 			}
 			$table_data[] = array(
 				'<label for="alg_wc_add_new_product_image">' .
-					__( 'Image', 'user-products-for-woocommerce' ) .
+					__( 'Image', 'zili-user-products-for-woocommerce' ) .
 					$required_mark_html .
 				'</label>',
 				$the_field
@@ -896,7 +896,7 @@ class Alg_WC_User_Products_Shortcode {
 			);
 			$table_data[] = array(
 				'<label for="alg_wc_add_new_product_regular_price">' .
-					__( 'Regular Price', 'user-products-for-woocommerce' ) .
+					__( 'Regular Price', 'zili-user-products-for-woocommerce' ) .
 					$required_mark_html .
 				'</label>',
 				'<input' .
@@ -927,7 +927,7 @@ class Alg_WC_User_Products_Shortcode {
 			);
 			$table_data[] = array(
 				'<label for="alg_wc_add_new_product_sale_price">' .
-					__( 'Sale Price', 'user-products-for-woocommerce' ) .
+					__( 'Sale Price', 'zili-user-products-for-woocommerce' ) .
 					$required_mark_html .
 				'</label>',
 				'<input' .
@@ -958,7 +958,7 @@ class Alg_WC_User_Products_Shortcode {
 			);
 			$table_data[] = array(
 				'<label for="alg_wc_add_new_product_external_url">' .
-					__( 'Product URL', 'user-products-for-woocommerce' ) .
+					__( 'Product URL', 'zili-user-products-for-woocommerce' ) .
 					$required_mark_html .
 				'</label>',
 				'<input' .
@@ -980,7 +980,7 @@ class Alg_WC_User_Products_Shortcode {
 			$args,
 			'cats',
 			'product_cat',
-			__( 'Categories', 'user-products-for-woocommerce' ),
+			__( 'Categories', 'zili-user-products-for-woocommerce' ),
 			$input_style,
 			$required_mark_html_template,
 			$table_data
@@ -990,7 +990,7 @@ class Alg_WC_User_Products_Shortcode {
 			$args,
 			'tags',
 			'product_tag',
-			__( 'Tags', 'user-products-for-woocommerce' ),
+			__( 'Tags', 'zili-user-products-for-woocommerce' ),
 			$input_style,
 			$required_mark_html_template,
 			$table_data
@@ -1061,8 +1061,8 @@ class Alg_WC_User_Products_Shortcode {
 			' name="alg_wc_add_new_product"' .
 			' value="' . (
 				0 == $atts['product_id'] ?
-				__( 'Add', 'user-products-for-woocommerce' ) :
-				__( 'Edit', 'user-products-for-woocommerce' )
+				__( 'Add', 'zili-user-products-for-woocommerce' ) :
+				__( 'Edit', 'zili-user-products-for-woocommerce' )
 			) . '"' .
 		'>';
 		$footer_html .= '</form>';

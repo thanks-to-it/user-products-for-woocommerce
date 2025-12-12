@@ -1,8 +1,8 @@
-=== User Products for WooCommerce ===
+=== ZILI User Products for WooCommerce ===
 Contributors: algoritmika, thankstoit, anbinder, karzin
 Tags: woocommerce, user products, ecommerce
 Requires at least: 5.0
-Tested up to: 6.8
+Tested up to: 6.9
 Stable tag: 2.0.0
 License: GNU General Public License v3.0
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
@@ -11,7 +11,7 @@ Let users add new WooCommerce products from frontend.
 
 == Description ==
 
-**User Products for WooCommerce** plugin lets your users add new WooCommerce products from frontend.
+**ZILI User Products for WooCommerce** plugin lets your users add new WooCommerce products from frontend.
 
 ### ✅ Main Features ###
 
@@ -25,9 +25,9 @@ Let users add new WooCommerce products from frontend.
 
 ### 🚀 Add User Products for WooCommerce ###
 
-Empower your WooCommerce community with "User Products for WooCommerce", enabling users to easily submit and manage products from the frontend, fostering a dynamic and collaborative online store experience.
+Empower your WooCommerce community with "ZILI User Products for WooCommerce", enabling users to easily submit and manage products from the frontend, fostering a dynamic and collaborative online store experience.
 
-The "User Products for WooCommerce" plugin is designed to facilitate an interactive and engaged user community by enabling users to add/upload new products directly from the frontend of your WooCommerce store.
+The "ZILI User Products for WooCommerce" plugin is designed to facilitate an interactive and engaged user community by enabling users to add/upload new products directly from the frontend of your WooCommerce store.
 
 On the frontend, users are greeted with a straightforward process for adding new products, where you can easily integrate a product upload form on the frontend from any page.
 
@@ -99,9 +99,14 @@ Expand the functionality of the user's "My Account" page by integrating a "Produ
 
 1. Upload the entire plugin folder to the `/wp-content/plugins/` directory.
 2. Activate the plugin through the "Plugins" menu in WordPress.
-3. Start by visiting plugin settings at "WooCommerce > Settings > User Products".
+3. Start by visiting plugin settings at "WooCommerce > Settings > ZILI User Products".
 
 == Changelog ==
+
+= 2.0.1 - 12/12/2025 =
+* Plugin renamed.
+* Tested up to: 6.9.
+* WC tested up to: 10.4.
 
 = 2.0.0 - 29/06/2025 =
 * Dev - Security - Output escaped.

@@ -1,8 +1,8 @@
 <?php
 /**
- * User Products for WooCommerce - Section Settings
+ * ZILI User Products for WooCommerce - Section Settings
  *
- * @version 1.5.0
+ * @version 2.0.1
  * @since   1.0.0
  *
  * @author  Algoritmika Ltd
@@ -62,13 +62,13 @@ class Alg_WC_User_Products_Settings_Section {
 	/**
 	 * get_user_roles_options.
 	 *
-	 * @version 1.2.0
+	 * @version 2.0.1
 	 * @since   1.0.0
 	 */
 	function get_user_roles_options() {
 		global $wp_roles;
 		$all_roles = apply_filters(
-			'editable_roles',
+			'editable_roles', // phpcs:ignore WordPress.NamingConventions.PrefixAllGlobals.NonPrefixedHooknameFound
 			(
 				isset( $wp_roles ) && is_object( $wp_roles ) ?
 				$wp_roles->roles :
@@ -76,7 +76,7 @@ class Alg_WC_User_Products_Settings_Section {
 			)
 		);
 		return array_merge(
-			array( 'guest' => __( 'Guest', 'user-products-for-woocommerce' ) ),
+			array( 'guest' => __( 'Guest', 'zili-user-products-for-woocommerce' ) ),
 			wp_list_pluck( $all_roles, 'name' )
 		);
 	}

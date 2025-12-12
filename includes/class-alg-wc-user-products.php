@@ -1,8 +1,8 @@
 <?php
 /**
- * User Products for WooCommerce - Main Class
+ * ZILI User Products for WooCommerce - Main Class
  *
- * @version 2.0.0
+ * @version 2.0.1
  * @since   1.0.0
  *
  * @author  Algoritmika Ltd
@@ -93,12 +93,12 @@ final class Alg_WC_User_Products {
 	/**
 	 * localize.
 	 *
-	 * @version 1.4.0
+	 * @version 2.0.1
 	 * @since   1.2.0
 	 */
 	function localize() {
-		load_plugin_textdomain(
-			'user-products-for-woocommerce',
+		load_plugin_textdomain( // phpcs:ignore PluginCheck.CodeAnalysis.DiscouragedFunctions.load_plugin_textdomainFound
+			'zili-user-products-for-woocommerce',
 			false,
 			dirname( plugin_basename( ALG_WC_USER_PRODUCTS_FILE ) ) . '/langs/'
 		);
@@ -166,7 +166,7 @@ final class Alg_WC_User_Products {
 	/**
 	 * Show action links on the plugin screen.
 	 *
-	 * @version 2.0.0
+	 * @version 2.0.1
 	 * @since   1.0.0
 	 *
 	 * @param   mixed $links
@@ -176,14 +176,14 @@ final class Alg_WC_User_Products {
 		$custom_links = array();
 
 		$custom_links[] = '<a href="' . admin_url( 'admin.php?page=wc-settings&tab=alg_wc_user_products' ) . '">' .
-			__( 'Settings', 'user-products-for-woocommerce' ) .
+			__( 'Settings', 'zili-user-products-for-woocommerce' ) .
 		'</a>';
 
 		return array_merge( $custom_links, $links );
 	}
 
 	/**
-	 * Add User Products settings tab to WooCommerce settings.
+	 * Add "ZILI User Products" settings tab to WooCommerce settings.
 	 *
 	 * @version 2.0.0
 	 * @since   1.0.0

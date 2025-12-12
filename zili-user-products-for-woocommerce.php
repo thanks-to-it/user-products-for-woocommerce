@@ -1,15 +1,15 @@
 <?php
 /*
-Plugin Name: User Products for WooCommerce
-Plugin URI: https://wordpress.org/plugins/user-products-for-woocommerce/
+Plugin Name: ZILI User Products for WooCommerce
+Plugin URI: https://wordpress.org/plugins/zili-user-products-for-woocommerce/
 Description: Let users add new WooCommerce products from frontend.
-Version: 2.0.0
+Version: 2.0.1-dev
 Author: Algoritmika Ltd
-Author URI: https://profiles.wordpress.org/algoritmika/
+Author URI: https://algoritmika.com
 Requires at least: 5.0
-Text Domain: user-products-for-woocommerce
+Text Domain: zili-user-products-for-woocommerce
 Domain Path: /langs
-WC tested up to: 9.9
+WC tested up to: 10.4
 Requires Plugins: woocommerce
 License: GNU General Public License v3.0
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
@@ -17,7 +17,7 @@ License URI: http://www.gnu.org/licenses/gpl-3.0.html
 
 defined( 'ABSPATH' ) || exit;
 
-if ( 'user-products-for-woocommerce.php' === basename( __FILE__ ) ) {
+if ( 'zili-user-products-for-woocommerce.php' === basename( __FILE__ ) ) {
 	/**
 	 * Check if Pro plugin version is activated.
 	 *
@@ -37,7 +37,7 @@ if ( 'user-products-for-woocommerce.php' === basename( __FILE__ ) ) {
 	}
 }
 
-defined( 'ALG_WC_USER_PRODUCTS_VERSION' ) || define( 'ALG_WC_USER_PRODUCTS_VERSION', '2.0.0' );
+defined( 'ALG_WC_USER_PRODUCTS_VERSION' ) || define( 'ALG_WC_USER_PRODUCTS_VERSION', '2.0.1-dev-20251212-2321' );
 
 defined( 'ALG_WC_USER_PRODUCTS_FILE' ) || define( 'ALG_WC_USER_PRODUCTS_FILE', __FILE__ );
 

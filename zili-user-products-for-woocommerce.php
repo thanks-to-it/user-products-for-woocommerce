@@ -3,7 +3,7 @@
 Plugin Name: ZILI User Products for WooCommerce
 Plugin URI: https://wordpress.org/plugins/zili-user-products-for-woocommerce/
 Description: Let users add new WooCommerce products from frontend.
-Version: 2.0.1-dev
+Version: 2.0.1
 Author: Algoritmika Ltd
 Author URI: https://algoritmika.com
 Requires at least: 5.0
@@ -37,7 +37,7 @@ if ( 'zili-user-products-for-woocommerce.php' === basename( __FILE__ ) ) {
 	}
 }
 
-defined( 'ALG_WC_USER_PRODUCTS_VERSION' ) || define( 'ALG_WC_USER_PRODUCTS_VERSION', '2.0.1-dev-20251212-2321' );
+defined( 'ALG_WC_USER_PRODUCTS_VERSION' ) || define( 'ALG_WC_USER_PRODUCTS_VERSION', '2.0.1' );
 
 defined( 'ALG_WC_USER_PRODUCTS_FILE' ) || define( 'ALG_WC_USER_PRODUCTS_FILE', __FILE__ );
 

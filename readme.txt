@@ -3,7 +3,7 @@ Contributors: algoritmika, thankstoit, anbinder, karzin
 Tags: woocommerce, user products, ecommerce
 Requires at least: 5.0
 Tested up to: 6.9
-Stable tag: 2.0.0
+Stable tag: 2.0.1
 License: GNU General Public License v3.0
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 
@@ -103,7 +103,7 @@ Expand the functionality of the user's "My Account" page by integrating a "Produ
 
 == Changelog ==
 
-= 2.0.1 - 12/12/2025 =
+= 2.0.1 - 18/12/2025 =
 * Plugin renamed.
 * Tested up to: 6.9.
 * WC tested up to: 10.4.

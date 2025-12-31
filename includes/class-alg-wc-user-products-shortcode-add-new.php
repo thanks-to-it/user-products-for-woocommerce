@@ -2,7 +2,7 @@
 /**
  * ZILI User Products for WooCommerce - Shortcode Class
  *
- * @version 2.0.1
+ * @version 2.0.2
  * @since   1.0.0
  *
  * @author  Algoritmika Ltd
@@ -33,7 +33,7 @@ class Alg_WC_User_Products_Shortcode {
 	/**
 	 * Constructor.
 	 *
-	 * @version 2.0.0
+	 * @version 2.0.2
 	 * @since   1.0.0
 	 *
 	 * @todo    (dev) recheck if shortcode atts can be used instead of `get_option()`?
@@ -120,7 +120,7 @@ class Alg_WC_User_Products_Shortcode {
 		}
 
 		// Adding the shortcode
-		add_shortcode( 'wc_user_products_add_new', array( $this, 'wc_user_products_add_new' ) );
+		add_shortcode( 'zili_wc_user_products_add_new', array( $this, 'wc_user_products_add_new' ) );
 	}
 
 	/**
@@ -522,16 +522,15 @@ class Alg_WC_User_Products_Shortcode {
 	/**
 	 * wc_user_products_add_new.
 	 *
-	 * @version 2.0.1
+	 * @version 2.0.2
 	 * @since   1.0.0
 	 *
-	 * @todo    (v2.0.0) escape output?
 	 * @todo    (dev) re-check: `$atts` and `$this->the_atts`
 	 * @todo    (dev) multipart only if image...
 	 */
 	function wc_user_products_add_new( $atts ) {
 
-		$atts = shortcode_atts( $this->the_atts, $atts, 'wc_user_products_add_new' );
+		$atts = shortcode_atts( $this->the_atts, $atts, 'zili_wc_user_products_add_new' );
 
 		if ( ! empty( $atts['visibility'] ) ) {
 			$current_user      = wp_get_current_user();
@@ -643,64 +642,64 @@ class Alg_WC_User_Products_Shortcode {
 		// phpcs:enable WordPress.Security.NonceVerification.Recommended
 
 		if ( isset( $_REQUEST['alg_wc_add_new_product'] ) ) { // phpcs:ignore WordPress.Security.NonceVerification.Recommended
-			if ( true === ( $validate_args = $this->validate_args( $args, $atts ) ) ) {
+			if ( true !== ( $verify_nonce_result = alg_wc_user_products()->core->verify_nonce( 'save_product' ) ) ) {
+				$notice_html .= alg_wc_user_products()->core->get_wc_message_html(
+					$verify_nonce_result,
+					'error'
+				);
+			} elseif ( true === ( $validate_args = $this->validate_args( $args, $atts ) ) ) {
 				$result = $this->add_new_product( $args, $atts );
 				if ( 0 == $result ) {
 					// Error
-					$notice_html .= '<div class="woocommerce">' .
-						'<ul class="woocommerce-error">' .
-							'<li>' .
-								__( 'Error!', 'zili-user-products-for-woocommerce' ) .
-							'</li>' .
-						'</ul>' .
-					'</div>';
+					$notice_html .= alg_wc_user_products()->core->get_wc_message_html(
+						__( 'Error!', 'zili-user-products-for-woocommerce' ),
+						'error'
+					);
 				} else {
 					// Success
 					if ( 0 == $atts['product_id'] ) {
-						$notice_html .= '<div class="woocommerce">' .
-							'<div class="woocommerce-message">' .
-								str_replace(
-									'%product_title%',
-									$args['title'],
-									get_option(
-										'alg_wc_user_products_message_product_successfully_added',
-										__( '"%product_title%" successfully added!', 'zili-user-products-for-woocommerce' )
-									)
-								) .
-							'</div>' .
-						'</div>';
+						$notice_html .= alg_wc_user_products()->core->get_wc_message_html(
+							str_replace(
+								'%product_title%',
+								$args['title'],
+								get_option(
+									'alg_wc_user_products_message_product_successfully_added',
+									__( '"%product_title%" successfully added!', 'zili-user-products-for-woocommerce' )
+								)
+							)
+						);
 						// Email
 						$this->maybe_send_email( $args );
 					} else {
-						$notice_html .= '<div class="woocommerce">' .
-							'<div class="woocommerce-message">' .
-								str_replace(
-									'%product_title%',
-									$args['title'],
-									get_option(
-										'alg_wc_user_products_message_product_successfully_edited',
-										__( '"%product_title%" successfully edited!', 'zili-user-products-for-woocommerce' )
-									)
-								) .
-							'</div>' .
-						'</div>';
+						$notice_html .= alg_wc_user_products()->core->get_wc_message_html(
+							str_replace(
+								'%product_title%',
+								$args['title'],
+								get_option(
+									'alg_wc_user_products_message_product_successfully_edited',
+									__( '"%product_title%" successfully edited!', 'zili-user-products-for-woocommerce' )
+								)
+							)
+						);
 					}
 				}
 			} else {
-				$notice_html .= '<div class="woocommerce">' .
-					'<ul class="woocommerce-error">' . $validate_args . '</ul>' .
-				'</div>';
+				$notice_html .= alg_wc_user_products()->core->get_wc_message_html(
+					$validate_args,
+					'error',
+					false
+				);
 			}
 		}
 
 		if ( isset( $_GET['alg_wc_edit_product_image_delete'] ) ) { // phpcs:ignore WordPress.Security.NonceVerification.Recommended
-			$product_id     = intval( $_GET['alg_wc_edit_product_image_delete'] ); // phpcs:ignore WordPress.Security.NonceVerification.Recommended
-			$post_author_id = get_post_field( 'post_author', $product_id );
-			$user_id        = get_current_user_id();
-			if ( $user_id != $post_author_id ) {
-				echo '<p>' .
-					esc_html__( 'Wrong user ID!', 'zili-user-products-for-woocommerce' ) .
-				'</p>';
+			$product_id = intval( $_GET['alg_wc_edit_product_image_delete'] ); // phpcs:ignore WordPress.Security.NonceVerification.Recommended
+			$user_id    = get_current_user_id();
+			if ( true !== ( $verify_action_result = alg_wc_user_products()->core->verify_action( $user_id, $product_id, 'delete_image' ) ) ) {
+				echo wp_kses_post( alg_wc_user_products()->core->get_wc_message_html(
+					$verify_action_result,
+					'error'
+				) );
 			} else {
 				$image_id = get_post_thumbnail_id( $product_id );
 				wp_delete_post( $image_id, true );
@@ -724,6 +723,7 @@ class Alg_WC_User_Products_Shortcode {
 				array(
 					'alg_wc_edit_product_image_delete',
 					'alg_wc_delete_product',
+					'_wpnonce'
 				)
 			) .
 			'" enctype="multipart/form-data"' .
@@ -845,13 +845,15 @@ class Alg_WC_User_Products_Shortcode {
 			'>';
 			if ( 0 != $atts['product_id'] ) {
 				$the_field = (
-					'' == get_post_thumbnail_id( $atts['product_id'] ) ?
+					empty( get_post_thumbnail_id( $atts['product_id'] ) ) ?
 					$new_image_field :
 					(
 						'<a' .
 							' href="' . add_query_arg(
-								'alg_wc_edit_product_image_delete',
-								$atts['product_id']
+								array(
+									'alg_wc_edit_product_image_delete' => $atts['product_id'],
+									'_wpnonce'                         => wp_create_nonce( 'delete_image' ),
+								)
 							) . '"' .
 							' onclick="return confirm(\'' .
 								__( 'Are you sure?', 'zili-user-products-for-woocommerce' ) .
@@ -1065,9 +1067,20 @@ class Alg_WC_User_Products_Shortcode {
 				__( 'Edit', 'zili-user-products-for-woocommerce' )
 			) . '"' .
 		'>';
+		$footer_html .= wp_nonce_field( 'save_product', '_wpnonce', true, false );
 		$footer_html .= '</form>';
 
-		return $notice_html . $header_html . $input_fields_html . $footer_html;
+		$output = (
+			$notice_html .
+			$header_html .
+			$input_fields_html .
+			$footer_html
+		);
+
+		return wp_kses(
+			$output,
+			alg_wc_user_products()->core->get_allowed_html()
+		);
 	}
 
 }

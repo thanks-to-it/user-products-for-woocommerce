@@ -2,7 +2,7 @@
 /**
  * ZILI User Products for WooCommerce - My Account Class
  *
- * @version 2.0.1
+ * @version 2.0.2
  * @since   1.0.0
  *
  * @author  Algoritmika Ltd
@@ -179,16 +179,20 @@ class Alg_WC_User_Products_My_Account {
 	/**
 	 * add_my_products_content_my_account_page.
 	 *
-	 * @version 1.3.0
+	 * @version 2.0.2
 	 * @since   1.0.0
 	 */
 	function add_my_products_content_my_account_page() {
-		echo do_shortcode(
-			get_option(
-				'alg_wc_user_products_my_account_tab_content',
-				'[wc_user_products_list]'
-			)
+		$content = get_option(
+			'alg_wc_user_products_my_account_tab_content',
+			'[zili_wc_user_products_list]'
 		);
+		$content = str_replace(
+			'[wc_user_products_list]',
+			'[zili_wc_user_products_list]',
+			$content
+		);
+		echo do_shortcode( $content );
 	}
 
 }

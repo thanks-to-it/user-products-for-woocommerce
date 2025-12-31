@@ -2,7 +2,7 @@
 /**
  * ZILI User Products for WooCommerce - Core Class
  *
- * @version 2.0.0
+ * @version 2.0.2
  * @since   1.0.0
  *
  * @author  Algoritmika Ltd
@@ -31,6 +31,142 @@ class Alg_WC_User_Products_Core {
 			require_once plugin_dir_path( __FILE__ ) . 'class-alg-wc-user-products-my-account.php';
 		}
 
+	}
+
+	/**
+	 * verify_nonce.
+	 *
+	 * @version 2.0.2
+	 * @since   2.0.2
+	 *
+	 * @todo    (v2.0.2) custom nonce name?
+	 */
+	function verify_nonce( $action ) {
+		if ( ! isset( $_REQUEST['_wpnonce'] ) ) {
+			return __( 'Nonce missing!', 'zili-user-products-for-woocommerce' );
+		}
+		if ( ! wp_verify_nonce( sanitize_text_field( wp_unslash( $_REQUEST['_wpnonce'] ) ), $action ) ) {
+			return __( 'Link expired!', 'zili-user-products-for-woocommerce' );
+		}
+		return true;
+	}
+
+	/**
+	 * verify_action.
+	 *
+	 * @version 2.0.2
+	 * @since   2.0.2
+	 */
+	function verify_action( $user_id, $product_id, $action ) {
+		if ( true !== ( $verify_nonce_result = $this->verify_nonce( $action ) ) ) {
+			return $verify_nonce_result;
+		}
+		if ( true !== ( $verify_author_result = $this->verify_author( $user_id, $product_id ) ) ) {
+			return $verify_author_result;
+		}
+		return true;
+	}
+
+	/**
+	 * verify_author.
+	 *
+	 * @version 2.0.2
+	 * @since   2.0.2
+	 */
+	function verify_author( $user_id, $product_id ) {
+		$post_author_id = get_post_field( 'post_author', $product_id );
+		if ( $user_id != $post_author_id ) {
+			return __( 'Wrong user ID!', 'zili-user-products-for-woocommerce' );
+		}
+		return true;
+	}
+
+	/**
+	 * get_wc_message_html.
+	 *
+	 * @version 2.0.2
+	 * @since   2.0.2
+	 */
+	function get_wc_message_html( $msg, $type = 'message', $is_single = true ) {
+		$res = '<div class="woocommerce">';
+		if ( 'message' === $type ) {
+			$res .= '<div class="woocommerce-message">' .
+				$msg .
+			'</div>';
+		} else { // 'error'
+			$res .= '<ul class="woocommerce-error">';
+			if ( $is_single ) {
+				$res .= '<li>';
+			}
+			$res .= $msg;
+			if ( $is_single ) {
+				$res .= '</li>';
+			}
+			$res .= '</ul>';
+		}
+		$res .= '</div>';
+		return $res;
+	}
+
+	/**
+	 * get_allowed_html.
+	 *
+	 * @version 2.0.2
+	 * @since   2.0.2
+	 *
+	 * @todo    (v2.0.2) recheck?
+	 */
+	function get_allowed_html() {
+		$allowed_html = array(
+			'form' => array(
+				'action'         => true,
+				'accept'         => true,
+				'accept-charset' => true,
+				'enctype'        => true,
+				'method'         => true,
+				'name'           => true,
+				'target'         => true,
+				'class'          => true,
+			),
+			'input' => array(
+				'type'     => true,
+				'id'       => true,
+				'name'     => true,
+				'class'    => true,
+				'style'    => true,
+				'value'    => true,
+				'onchange' => true,
+				'checked'  => true,
+				'required' => true,
+				'min'      => true,
+				'max'      => true,
+				'step'     => true,
+				'accept'   => true,
+			),
+			'select' => array(
+				'id'       => true,
+				'name'     => true,
+				'class'    => true,
+				'style'    => true,
+				'onchange' => true,
+				'multiple' => true,
+				'required' => true,
+			),
+			'option' => array(
+				'value'    => true,
+				'selected' => true,
+			),
+			'a' => array(
+				'href'    => true,
+				'target'  => true,
+				'class'   => true,
+				'onclick' => true,
+			),
+		);
+		return array_merge(
+			wp_kses_allowed_html( 'post' ),
+			$allowed_html
+		);
 	}
 
 	/**

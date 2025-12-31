@@ -2,7 +2,7 @@
 /**
  * ZILI User Products for WooCommerce - General Section Settings
  *
- * @version 2.0.1
+ * @version 2.0.2
  * @since   1.0.0
  *
  * @author  Algoritmika Ltd
@@ -29,7 +29,7 @@ class Alg_WC_User_Products_Settings_General extends Alg_WC_User_Products_Setting
 	/**
 	 * get_settings.
 	 *
-	 * @version 2.0.1
+	 * @version 2.0.2
 	 * @since   1.0.0
 	 *
 	 * @todo    (feature) `alg_wc_user_products_product_type` - Variable products
@@ -45,7 +45,7 @@ class Alg_WC_User_Products_Settings_General extends Alg_WC_User_Products_Setting
 					sprintf(
 						/* Translators: %s: Shortcode name. */
 						__( 'Use %s shortcode to add product upload form to frontend.', 'zili-user-products-for-woocommerce' ),
-						'<code>[wc_user_products_add_new]</code>'
+						'<code>[zili_wc_user_products_add_new]</code>'
 					)
 				),
 			),
@@ -109,11 +109,11 @@ class Alg_WC_User_Products_Settings_General extends Alg_WC_User_Products_Setting
 					sprintf(
 						/* Translators: %s: Shortcode name. */
 						__( 'You should use %s shortcode here.', 'zili-user-products-for-woocommerce' ),
-						'<code>[wc_user_products_list]</code>'
+						'<code>[zili_wc_user_products_list]</code>'
 					)
 				),
 				'id'                => 'alg_wc_user_products_my_account_tab_content',
-				'default'           => '[wc_user_products_list]',
+				'default'           => '[zili_wc_user_products_list]',
 				'type'              => 'textarea',
 				'css'               => 'width:100%;height:100px;',
 			),

@@ -3,7 +3,7 @@ Contributors: algoritmika, thankstoit, anbinder, karzin
 Tags: woocommerce, user products, ecommerce
 Requires at least: 5.0
 Tested up to: 6.9
-Stable tag: 2.0.1
+Stable tag: 2.0.2
 License: GNU General Public License v3.0
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 
@@ -15,7 +15,7 @@ Let users add new WooCommerce products from frontend.
 
 ### ✅ Main Features ###
 
-* Add product upload form to the **frontend** with the `[wc_user_products_add_new]` shortcode.
+* Add product upload form to the **frontend** with the `[zili_wc_user_products_add_new]` shortcode.
 * Set **additional** and **required form fields**.
 * Limit the form to selected **user roles** only.
 * Set default **product status**, e.g., "pending review" or "published".
@@ -33,7 +33,7 @@ On the frontend, users are greeted with a straightforward process for adding new
 
 ### 🚀 Allow Users to Upload Products From Store Frontend ###
 
-Enable users to add products directly from the frontend of your WooCommerce store using the `[wc_user_products_add_new]` shortcode.
+Enable users to add products directly from the frontend of your WooCommerce store using the `[zili_wc_user_products_add_new]` shortcode.
 
 This feature simplifies the process of product submission, allowing users to contribute new items through a user-friendly form, enhancing community interaction and product variety on your site.
 
@@ -103,6 +103,14 @@ Expand the functionality of the user's "My Account" page by integrating a "Produ
 
 == Changelog ==
 
+= 2.0.2 - 31/12/2025 =
+* Fix - Shortcodes - `[zili_wc_user_products_add_new]` - "New image" field fixed.
+* Dev - Shortcodes - `[zili_wc_user_products_list]` - `thumbnail_size` - Default value updated from `post-thumbnail` to `woocommerce_thumbnail`.
+* Dev - Shortcodes - Output escaped.
+* Dev - Shortcodes - Nonces added.
+* Dev - Shortcodes - Renamed - `[wc_user_products_list]` to `[zili_wc_user_products_list]`; `[wc_user_products_add_new]` to `[zili_wc_user_products_add_new]`.
+* Dev - Localization - Do not load plugin text domain for the free plugin version.
+
 = 2.0.1 - 18/12/2025 =
 * Plugin renamed.
 * Tested up to: 6.9.
@@ -140,8 +148,8 @@ Expand the functionality of the user's "My Account" page by integrating a "Produ
 * Deploy script added.
 
 = 1.3.2 - 07/05/2021 =
-* Fix - Shortcodes - `[wc_user_products_list]` - `columns` - `product_nr` - Default title (`#`) added.
-* Dev - Shortcodes - `[wc_user_products_list]` - `columns` - `function=x` column added.
+* Fix - Shortcodes - `[zili_wc_user_products_list]` - `columns` - `product_nr` - Default title (`#`) added.
+* Dev - Shortcodes - `[zili_wc_user_products_list]` - `columns` - `function=x` column added.
 * Localization - Romanian `ro_RO` translations (by Florin) added.
 
 = 1.3.1 - 27/04/2021 =
@@ -152,30 +160,30 @@ Expand the functionality of the user's "My Account" page by integrating a "Produ
 * Fix - Fields Options - Product URL - "Required" mark fixed.
 * Dev - "Custom Fields Options" added.
 * Dev - Products tab - "Tab content" option added.
-* Dev - Shortcodes - `[wc_user_products_list]` - Product link added to the product title and thumbnail.
-* Dev - Shortcodes - `[wc_user_products_list]` - `user_id` attribute added (defaults to current user ID).
-* Dev - Shortcodes - `[wc_user_products_list]` - `columns` attribute added (defaults to `thumbnail,status,title,actions`).
-* Dev - Shortcodes - `[wc_user_products_list]` - `columns` - `categories` and `tags` columns added.
-* Dev - Shortcodes - `[wc_user_products_list]` - `columns` - `meta=x` column added.
-* Dev - Shortcodes - `[wc_user_products_list]` - `columns` - `taxonomy=x` column added.
-* Dev - Shortcodes - `[wc_user_products_list]` - `columns` - `status_label` column added.
-* Dev - Shortcodes - `[wc_user_products_list]` - `columns` - `product_nr` column added.
-* Dev - Shortcodes - `[wc_user_products_list]` - `thumbnail_size` attribute added (now defaults to `post-thumbnail` (was `25,25`)).
-* Dev - Shortcodes - `[wc_user_products_list]` - `column_titles` attribute added.
-* Dev - Shortcodes - `[wc_user_products_list]` - `column_styles` attribute added.
-* Dev - Shortcodes - `[wc_user_products_list]` - `column_classes` attribute added.
-* Dev - Shortcodes - `[wc_user_products_list]` - `column_sep` attribute added (applied to `columns`, `column_titles`, `column_styles` and `column_classes` attributes).
-* Dev - Shortcodes - `[wc_user_products_list]` - `table_class` attribute added.
-* Dev - Shortcodes - `[wc_user_products_list]` - `table_style` attribute added.
-* Dev - Shortcodes - `[wc_user_products_list]` - `row_styles` attribute added.
-* Dev - Shortcodes - `[wc_user_products_list]` - `actions` attribute added (defaults to `%edit% %delete%`; additional available placeholder: `%view%`).
-* Dev - Shortcodes - `[wc_user_products_list]` - `template` attribute added (defaults to `%products_table%`; additional available placeholder: `%total_products%`).
+* Dev - Shortcodes - `[zili_wc_user_products_list]` - Product link added to the product title and thumbnail.
+* Dev - Shortcodes - `[zili_wc_user_products_list]` - `user_id` attribute added (defaults to current user ID).
+* Dev - Shortcodes - `[zili_wc_user_products_list]` - `columns` attribute added (defaults to `thumbnail,status,title,actions`).
+* Dev - Shortcodes - `[zili_wc_user_products_list]` - `columns` - `categories` and `tags` columns added.
+* Dev - Shortcodes - `[zili_wc_user_products_list]` - `columns` - `meta=x` column added.
+* Dev - Shortcodes - `[zili_wc_user_products_list]` - `columns` - `taxonomy=x` column added.
+* Dev - Shortcodes - `[zili_wc_user_products_list]` - `columns` - `status_label` column added.
+* Dev - Shortcodes - `[zili_wc_user_products_list]` - `columns` - `product_nr` column added.
+* Dev - Shortcodes - `[zili_wc_user_products_list]` - `thumbnail_size` attribute added (now defaults to `post-thumbnail` (was `25,25`)).
+* Dev - Shortcodes - `[zili_wc_user_products_list]` - `column_titles` attribute added.
+* Dev - Shortcodes - `[zili_wc_user_products_list]` - `column_styles` attribute added.
+* Dev - Shortcodes - `[zili_wc_user_products_list]` - `column_classes` attribute added.
+* Dev - Shortcodes - `[zili_wc_user_products_list]` - `column_sep` attribute added (applied to `columns`, `column_titles`, `column_styles` and `column_classes` attributes).
+* Dev - Shortcodes - `[zili_wc_user_products_list]` - `table_class` attribute added.
+* Dev - Shortcodes - `[zili_wc_user_products_list]` - `table_style` attribute added.
+* Dev - Shortcodes - `[zili_wc_user_products_list]` - `row_styles` attribute added.
+* Dev - Shortcodes - `[zili_wc_user_products_list]` - `actions` attribute added (defaults to `%edit% %delete%`; additional available placeholder: `%view%`).
+* Dev - Shortcodes - `[zili_wc_user_products_list]` - `template` attribute added (defaults to `%products_table%`; additional available placeholder: `%total_products%`).
 * Dev - Calling `flush_rewrite_rules()` on every settings save now.
 * Dev - Admin settings descriptions updated.
 * Dev - Code refactoring.
 
 = 1.2.0 - 16/04/2021 =
-* Dev - Shortcodes - `[wc_user_products_list]` shortcode added.
+* Dev - Shortcodes - `[zili_wc_user_products_list]` shortcode added.
 * Dev - Plugin is initialized on `plugins_loaded` now.
 * Dev - Localization - `load_plugin_textdomain()` function moved to the `init` hook.
 * Dev - Admin settings descriptions updated.

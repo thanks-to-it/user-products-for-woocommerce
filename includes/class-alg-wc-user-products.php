@@ -2,7 +2,7 @@
 /**
  * ZILI User Products for WooCommerce - Main Class
  *
- * @version 2.0.1
+ * @version 2.0.2
  * @since   1.0.0
  *
  * @author  Algoritmika Ltd
@@ -57,7 +57,7 @@ final class Alg_WC_User_Products {
 	/**
 	 * Alg_WC_User_Products Constructor.
 	 *
-	 * @version 2.0.0
+	 * @version 2.0.2
 	 * @since   1.0.0
 	 *
 	 * @access  public
@@ -70,7 +70,9 @@ final class Alg_WC_User_Products {
 		}
 
 		// Set up localisation
-		add_action( 'init', array( $this, 'localize' ) );
+		if ( 'user-products-for-woocommerce-pro.php' === basename( ALG_WC_USER_PRODUCTS_FILE ) ) {
+			add_action( 'init', array( $this, 'localize' ) );
+		}
 
 		// Declare compatibility with custom order tables for WooCommerce
 		add_action( 'before_woocommerce_init', array( $this, 'wc_declare_compatibility' ) );

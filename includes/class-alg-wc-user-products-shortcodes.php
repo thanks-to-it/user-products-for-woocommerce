@@ -2,7 +2,7 @@
 /**
  * ZILI User Products for WooCommerce - Shortcodes Class
  *
- * @version 2.0.1
+ * @version 2.0.2
  * @since   1.2.0
  *
  * @author  Algoritmika Ltd
@@ -17,29 +17,26 @@ class Alg_WC_User_Products_Shortcodes {
 	/**
 	 * Constructor.
 	 *
-	 * @version 1.2.0
+	 * @version 2.0.2
 	 * @since   1.2.0
-	 *
-	 * @todo    (dev) maybe add `alg_` prefix to all shortcodes?
 	 */
 	function __construct() {
-		add_shortcode( 'wc_user_products_list', array( $this, 'wc_user_products_list' ) );
+		add_shortcode( 'zili_wc_user_products_list', array( $this, 'wc_user_products_list' ) );
 	}
 
 	/**
 	 * wc_user_products_list.
 	 *
-	 * @version 2.0.1
+	 * @version 2.0.2
 	 * @since   1.2.0
 	 *
-	 * @todo    (v2.0.0) escape output?
 	 * @todo    (fix) recheck all `explode()` for empty strings!
 	 * @todo    (feature) `function`: optional function params
 	 * @todo    (feature) `column_titles`: add "do not use default titles" option
 	 * @todo    (feature) `columns`: add more columns, e.g., "Price", etc.
 	 * @todo    (dev) `columns`: `product_nr` to `nr`?
 	 * @todo    (dev) `columns`: replace `status` with `status_label` in the default value?
-	 * @todo    (dev) rename to `[wc_user_products_list_all]`?
+	 * @todo    (dev) rename to `[zili_wc_user_products_list_all]`?
 	 * @todo    (dev) use `wc_get_products()`?
 	 * @todo    (feature) add `column_functions` param - to format the result, e.g., for `meta=_price` we could use `wc_price`?
 	 */
@@ -56,11 +53,11 @@ class Alg_WC_User_Products_Shortcodes {
 			'row_styles'     => '',
 			'table_class'    => 'shop_table shop_table_responsive my_account_orders',
 			'table_style'    => '',
-			'thumbnail_size' => 'post-thumbnail',
+			'thumbnail_size' => 'woocommerce_thumbnail',
 			'actions'        => '%edit% %delete%',
 			'template'       => '%products_table%',
 		);
-		$atts = shortcode_atts( $default_atts, $atts, 'wc_user_products_list' );
+		$atts = shortcode_atts( $default_atts, $atts, 'zili_wc_user_products_list' );
 
 		// Thumbnail size
 		$thumbnail_size_parts = array_map( 'trim', explode( ',', $atts['thumbnail_size'] ) );
@@ -79,26 +76,26 @@ class Alg_WC_User_Products_Shortcodes {
 		// Execute actions
 		$output = '';
 		if ( isset( $_GET['alg_wc_delete_product'] ) ) { // phpcs:ignore WordPress.Security.NonceVerification.Recommended
-			$product_id     = intval( $_GET['alg_wc_delete_product'] ); // phpcs:ignore WordPress.Security.NonceVerification.Recommended
-			$post_author_id = get_post_field( 'post_author', $product_id );
-			if ( $user_id != $post_author_id ) {
-				$output .= '<p>' .
-					__( 'Wrong user ID!', 'zili-user-products-for-woocommerce' ) .
-				'</p>';
+			$product_id = intval( $_GET['alg_wc_delete_product'] ); // phpcs:ignore WordPress.Security.NonceVerification.Recommended
+			if ( true !== ( $verify_action_result = alg_wc_user_products()->core->verify_action( $user_id, $product_id, 'delete_product' ) ) ) {
+				$output .= alg_wc_user_products()->core->get_wc_message_html(
+					$verify_action_result,
+					'error'
+				);
 			} else {
 				wp_delete_post( $product_id, true );
 			}
 		}
 		if ( isset( $_GET['alg_wc_edit_product'] ) ) { // phpcs:ignore WordPress.Security.NonceVerification.Recommended
-			$product_id     = intval( $_GET['alg_wc_edit_product'] ); // phpcs:ignore WordPress.Security.NonceVerification.Recommended
-			$post_author_id = get_post_field( 'post_author', $product_id );
-			if ( $user_id != $post_author_id ) {
-				$output .= '<p>' .
-					__( 'Wrong user ID!', 'zili-user-products-for-woocommerce' ) .
-				'</p>';
+			$product_id = intval( $_GET['alg_wc_edit_product'] ); // phpcs:ignore WordPress.Security.NonceVerification.Recommended
+			if ( true !== ( $verify_author_result = alg_wc_user_products()->core->verify_author( $user_id, $product_id ) ) ) {
+				$output .= alg_wc_user_products()->core->get_wc_message_html(
+					$verify_author_result,
+					'error'
+				);
 			} else {
 				$output .= do_shortcode(
-					'[wc_user_products_add_new product_id="' . $product_id . '"]'
+					'[zili_wc_user_products_add_new product_id="' . $product_id . '"]'
 				);
 			}
 		}
@@ -226,18 +223,22 @@ class Alg_WC_User_Products_Shortcodes {
 
 						case 'actions':
 							$edit_url   = add_query_arg(
-								'alg_wc_edit_product',
-								$_product_id,
+								array(
+									'alg_wc_edit_product' => $_product_id,
+								),
 								remove_query_arg(
 									array(
 										'alg_wc_edit_product_image_delete',
 										'alg_wc_delete_product',
+										'_wpnonce',
 									)
 								)
 							);
 							$delete_url = add_query_arg(
-								'alg_wc_delete_product',
-								$_product_id,
+								array(
+									'alg_wc_delete_product' => $_product_id,
+									'_wpnonce'              => wp_create_nonce( 'delete_product' ),
+								),
 								remove_query_arg(
 									array(
 										'alg_wc_edit_product_image_delete',
@@ -250,7 +251,7 @@ class Alg_WC_User_Products_Shortcodes {
 								'%edit%'   => (
 									'<a' .
 										' class="button"' .
-										' href="' . $edit_url . '"' .
+										' href="' . esc_url( $edit_url ) . '"' .
 									'>' .
 										__( 'Edit', 'zili-user-products-for-woocommerce' ) .
 									'</a>'
@@ -258,7 +259,7 @@ class Alg_WC_User_Products_Shortcodes {
 								'%delete%' => (
 									'<a' .
 										' class="button"' .
-										' href="' . $delete_url . '"' .
+										' href="' . esc_url( $delete_url ) . '"' .
 										' onclick="return confirm(\'' .
 											__( 'Are you sure?', 'zili-user-products-for-woocommerce' ) .
 										'\')"' .
@@ -270,7 +271,7 @@ class Alg_WC_User_Products_Shortcodes {
 									'<a' .
 										' class="button"' .
 										' target="_blank"' .
-										' href="' . $view_url . '"' .
+										' href="' . esc_url( $view_url ) . '"' .
 									'>' .
 										__( 'View', 'zili-user-products-for-woocommerce' ) .
 									'</a>'
@@ -354,7 +355,10 @@ class Alg_WC_User_Products_Shortcodes {
 			'</em></p>';
 		}
 
-		return $output;
+		return wp_kses(
+			$output,
+			alg_wc_user_products()->core->get_allowed_html()
+		);
 	}
 
 }

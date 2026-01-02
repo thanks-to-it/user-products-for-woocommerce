@@ -3,7 +3,7 @@ Contributors: algoritmika, thankstoit, anbinder, karzin
 Tags: woocommerce, user products, ecommerce
 Requires at least: 5.0
 Tested up to: 6.9
-Stable tag: 2.0.2
+Stable tag: 2.0.3
 License: GNU General Public License v3.0
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 
@@ -102,6 +102,10 @@ Expand the functionality of the user's "My Account" page by integrating a "Produ
 3. Start by visiting plugin settings at "WooCommerce > Settings > ZILI User Products".
 
 == Changelog ==
+
+= 2.0.3 - 02/01/2026 =
+* Deploy script added.
+* Banner and icon added.
 
 = 2.0.2 - 31/12/2025 =
 * Fix - Shortcodes - `[zili_wc_user_products_add_new]` - "New image" field fixed.
